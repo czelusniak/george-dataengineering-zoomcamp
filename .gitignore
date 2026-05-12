@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 .python-version
 ny_taxi_postgres_data/
+keys/
+*.json
