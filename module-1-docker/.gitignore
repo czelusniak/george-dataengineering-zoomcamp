@@ -1,0 +1,6 @@
+*.parquet
+.venv/
+__pycache__/
+*.pyc
+.python-version
+ny_taxi_postgres_data/
