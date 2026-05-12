@@ -6,3 +6,6 @@ __pycache__/
 ny_taxi_postgres_data/
 keys/
 *.json
+.terraform/
+*.tfstate
+*.tfstate.backup
