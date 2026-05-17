@@ -249,6 +249,126 @@ The goal is to eliminate the local processing bottleneck, which is slow for mill
 
 ---
 
+## Setting up Google Cloud and BigQuery: Data Engineering Zoomcamp - 2.4.2
+
+To connect Kestra to Google Cloud in local development, the recommended approach is to expose the Google service account JSON to the Kestra container as a secret through an environment variable.
+
+### Recommended approach
+
+Instead of pasting the service account JSON directly into a flow, encode the JSON in base64 and load it through Docker Compose. This follows the Kestra documentation more closely and avoids hardcoding credentials inside YAML files.
+
+### Steps
+
+1. Save the Google service account JSON locally, for example as `service-account.json`.
+2. Copy the example file and replace the placeholder with the base64-encoded secret:
+
+```bash
+cp .env_encoded.example .env_encoded
+echo SECRET_GCP_SERVICE_ACCOUNT=$(cat service-account.json | base64 -w 0) > .env_encoded
+```
+
+3. In `docker-compose.yml`, load the committed example file and the optional local override inside the `kestra` service:
+
+```yaml
+env_file:
+  - path: .env_encoded.example
+    required: true
+  - path: .env_encoded
+    required: false
+```
+
+4. Recreate the `kestra` container so it reads the new environment variable:
+
+```bash
+docker compose up -d --force-recreate kestra
+```
+
+### Why this works
+
+Kestra automatically exposes environment variables with the `SECRET_` prefix as secrets. That means:
+
+- `SECRET_GCP_SERVICE_ACCOUNT` in Docker becomes
+- `{{ secret('GCP_SERVICE_ACCOUNT') }}` inside a Kestra flow
+
+The committed `.env_encoded.example` keeps the setup reproducible for anyone cloning the repository, while the real `.env_encoded` stays local and untracked.
+
+### How to use it in a flow
+
+In GCP-related tasks, reference the service account like this:
+
+```yaml
+serviceAccount: "{{ secret('GCP_SERVICE_ACCOUNT') }}"
+```
+
+For non-sensitive values such as project ID, location, bucket name, and dataset name, it is fine to keep using Kestra KV pairs, for example:
+
+```yaml
+projectId: "{{ kv('GCP_PROJECT_ID') }}"
+```
+
+### What is KV in Kestra?
+
+`KV` stands for **Key-Value**. It is a simple way to store reusable configuration values inside a Kestra namespace.
+
+Examples:
+
+- key: `GCP_PROJECT_ID`
+- value: `kestra-sandbox`
+
+Later, any flow in the same namespace can read that value with:
+
+```yaml
+{{ kv('GCP_PROJECT_ID') }}
+```
+
+This is useful for values that are not sensitive and may be reused across multiple workflows, such as:
+
+- project ID
+- location
+- bucket name
+- dataset name
+
+### What does `06_gcp_kv.yaml` do?
+
+The flow [flows/06_gcp_kv.yaml](/home/ygritte/dev/de-zoomcamp-2k26/george-dataengineering-zoomcamp/02-workflow-orchestration/flows/06_gcp_kv.yaml) does not connect to Google Cloud and does not test authentication.
+
+Its job is only to create reusable KV pairs inside the `zoomcamp` namespace:
+
+- `GCP_PROJECT_ID`
+- `GCP_LOCATION`
+- `GCP_BUCKET_NAME`
+- `GCP_DATASET`
+
+After running that flow successfully, other flows can reuse those values with `kv(...)` instead of hardcoding them in every YAML file.
+
+### `kv()` vs `secret()`
+
+Use `kv()` for non-sensitive configuration:
+
+```yaml
+{{ kv('GCP_PROJECT_ID') }}
+```
+
+Use `secret()` for sensitive values such as credentials:
+
+```yaml
+{{ secret('GCP_SERVICE_ACCOUNT') }}
+```
+
+The main difference is:
+
+- `kv()` is for reusable configuration values
+- `secret()` is for credentials and other sensitive information
+
+### Important note
+
+Using the JSON directly inside a task may work for quick tests, but it is not the recommended setup. The safer and cleaner pattern is to inject the credential as a Kestra secret and reference it from flows.
+
+Source: Kestra official guide, "Google Credentials":
+https://kestra.io/docs/how-to-guides/google-credentials
+
+---
+
 ## Data Lakes
 
 <!-- notes here -->

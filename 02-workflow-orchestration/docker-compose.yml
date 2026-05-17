@@ -45,6 +45,11 @@ services:
   kestra:
     image: kestra/kestra:v1.1
     pull_policy: always
+    env_file:
+      - path: .env_encoded.example
+        required: true
+      - path: .env_encoded
+        required: false
     # Note that this setup with a root user is intended for development purpose.
     # Our base image runs without root, but the Docker Compose implementation needs root to access the Docker socket
     # To run Kestra in a rootless mode in production, see: https://kestra.io/docs/installation/podman-compose

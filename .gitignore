@@ -10,3 +10,4 @@ keys/
 *.tfstate
 *.tfstate.backup
 .env
+.env_encoded
