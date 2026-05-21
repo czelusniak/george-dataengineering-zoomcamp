@@ -8,6 +8,7 @@ Personal code and exercises for the [Data Engineering ZoomCamp](https://github.c
 |---|---|---|
 | 01 | Containerization & Infrastructure | Docker, PostgreSQL, Terraform |
 | 02 | Workflow Orchestration | Kestra |
+| 03 | Data Warehouse | BigQuery |
 
 You can also find my personal notes for each module inside the corresponding module folders.
 
