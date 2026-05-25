@@ -1,0 +1,1577 @@
+Title: Foundations of Analytics Engineer Role: Skills, Scope, and Modern Practices - Juan Manuel Perafan
+0:00 welcome to uh this um podcast interview and I want to ask you to tell us a few
+0:07 words about yourself maybe shortly and then also tell us about your career journey right so how did you start what
+0:14 did you do um maybe if you want you can tell us what you studied and how did you
+0:19 end up doing what you do now yes so I am Juan I was born and raised in Colombia but I've been living in the
+0:25 Netherlands for very soon it's going to be 15 years So quite a journey.
+0:31 Professionally speaking, I actually studied psychology uh like 10 plus years
+0:38 ago. I back then I was like super interested in psychological research in
+0:43 experimentation and stuff like that. And uh well the the truth is I I realized
+0:50 before graduating that maybe the field of data and the field of programming
+0:56 kind of encapsulated more what I wanted from a career than doing psychological research. So somewhere in my masters I
+1:04 decided to start learning programming and uh that led me to this rabbit hole.
+1:09 Just a quick thing sorry u because there there is different kind of psychology in
+1:15 your case were you doing some u studies like conducting correct
+1:20 experiment so I I was not like a how are you feeling and psychological problem
+1:26 type of person. I really enjoyed uh conducting experiments as in like
+1:31 connecting people to an electronaloggram or um fMRI or TSM or all sorts of
+1:39 technologies to study the brain that was to know statistics quite well for that
+1:45 right to conduct these experiments these studies. Yeah, actually yes. It's very
+1:51 different because um I think it's funny when when you're doing statistics on a
+1:57 very small sample size of like 80 people, things like inference become a lot more important. But when you have
+2:03 like streams, event data or like millions of clients, it's not about inference. It's about you already have
+2:10 like a lot of the population down there. But yeah, technically that was a a soft
+2:16 introduction to data, but the truth is um eventually worked my way into
+2:22 building dashboards. That was probably my first career.
+2:27 And I think I did that for a couple of years. I used to be a Tableau consultant
+2:32 until I realized that what I really wanted to do was everything database
+2:38 related. I really like everything from data modeling, writing SQL, even the
+2:45 administration part I thought was quite interesting. So probably for the last seven eight years I've been doing mostly
+2:52 SQL work and what is really interesting about analytics engineering in particular is
+3:00 back in 2020 uh and we're going to go through the history of analytics engineering but for
+3:06 context the first time somebody coined that term was mid209. So in early 2020, a recruiter reached
+3:14 out to me uh for a company where I actually already applied as a data engineer. Back then the conclusion was
+3:21 like oh I don't know you using two analytics to to go through this rabbit hole of data
+3:28 engineering. But yeah he reached out to me uh he said hey I have the perfect
+3:33 role for you. It's called analytics engineering. Back then I had no idea what it meant.
+3:39 Um, but that was a really cool opportunity. I was the first first analytics engineer in a company back in
+3:47 2020. Back then on Dutch LinkedIn, there was absolutely nobody else with that job
+3:53 title. So, I I always said I'm definitely not the best analytics engineer out there, but I was certainly
+4:00 one of the first uh that took it on themselves to co-uild this whole thing. And it's been
+4:08 really nice because um at the very first years like 2021 even 2022
+4:16 a big part of the role was to educate the markets on like what exactly this is how do we do it the technologies why is
+4:24 this valuable even to explain it to my own colleagues and back then I founded
+4:30 the first analytics engineering meetup I became the founder of the Dutch well co-founder of the Dutch DBT meetup as
+4:37 Well, and even packed reached out to me to write a book uh and I wrote it with
+4:42 some of my colleagues uh from back then. It's called fundamentals of analytics
+4:47 engineering. So, it was um a little bit of being at the right place at the right time. just
+4:55 being able to ride that wave of analytics engineering so early um brought up quite a lot of very
+5:01 interesting opportunities and it it's a very interesting role I even
+5:08 now like preparing for this webinar this whole week I've been watching all sorts of YouTube videos people discussing it
+5:15 you see everything people with takes that I don't fully agree with people with takes that surprise me uh lots of
+5:22 skepticism so I I think this is an amazing opportunity to discuss a little
+5:28 bit what it is, what it isn't and and um yeah, just explain to
+5:34 everybody why it's an interesting career choice and hopefully that gets them excited for module number four of the
+5:41 upcoming data engineering zoom camp. Yeah. And uh uh to me um the story of
+5:47 analytics engineer was uh it started with Victoria who is the the instructor
+5:52 we mentioned. Um so when uh we just started the slack data talks club slack I had this habit
+6:00 of talking to everyone who joined and she was like among the first uh few hundred people. So then back then since
+6:07 it wasn't like super huge volume I was able to talk to everyone and she was one of these few people and I was asking her
+6:13 her like hey what do you do and she was like yeah I'm doing this and that and u she was basically describing analytics
+6:19 engineering and I'm like what the hell is that like like I I know who are
+6:24 analysts I know who are data engineers but like this is something new and uh this u let's say encounter that we u met
+6:34 through slack was very useful because when we started the data engineering course
+6:40 and we run a poll uh before we started the course we run a poll what people
+6:46 want to see in the course and the top wanted thing was analytics engineering.
+6:51 So people wanted to see analytics engineering as a chapter as a module in the data engineering course and we were
+6:57 like okay what is that and Victoria back then volunteered to take the lead on
+7:03 that part. So which was pretty pretty cool. Um and from what I understood back then to
+7:10 me at least it was analytics engineering is the role that sits between analysts and engineers. So this is the analyst
+7:18 who can do a bit of engineering who doesn't need to wait for engineers to implement some things but also has the
+7:25 capacity of an analyst to explain different different things to stakeholders. So this is a person in
+7:30 between and the main tool for doing that for analytics engineers is DPT like how
+7:36 correct this um assessment is in your opinion. it it's a short summary but I do think
+7:43 there are some nuances that are very often misinterpreted which we can build on but even before I start explaining
+7:50 what it is I think it's really interesting to maybe you don't know the story but the reason I'm here is back
+7:57 when I was on paternity leave a couple of years back I actually followed the
+8:02 zoom camp myself I probably learned like most of the terraform that I know from from you
+8:09 and back Then I was already really good at DVT, but I did see uh Victoria's
+8:14 course. I thought it was so interesting that I reached out to her and said, "Hey, do you want a copy of the book? We're really curious what you would
+8:20 think." And uh that's a little bit of how it started. So it's
+8:25 yeah, she's a really interesting profile. Mhm. But uh summarizing analytics engineering
+8:30 the the first thing that I would I like to mention is as a field we make the
+8:36 mistake of defining it by what it isn't.
+8:42 Quite often when you're ask like what is an analytics engineer is you hear something like bridging the gap between
+8:48 analyst and data engineer or um in fact my probably my first real definition
+8:55 used to be anything that a data engineer and an analyst cannot or doesn't want to
+9:00 do but that's that's not that great to let yourself be defined by yeah
+9:06 okay I I thought people just wanted to have analysts who also are good at engineering not at data engineers don't
+9:12 do this but like the reason I am I have this idea is because I was a data
+9:19 scientist and as a data scientist we data scientists don't like engineering
+9:24 we don't like deployment like on average we don't like deploying models we don't like uh you know going deep and um
+9:33 thinking like uh why do build takes forever optimizing things like these sort of things but engineers were always
+9:40 busy like let's Hey, I wanted to deploy something but then I needed somebody who could help me with Kubernetes but they
+9:47 were always busy. So what I had to do is I had to learn Kubernetes myself to deploy it and I thought that maybe
+9:54 analytics engineer is it appeared in the same way. So analysts
+10:00 were forced to wait for data engineers to finish something but they were busy something else. So they thought okay how
+10:07 about we just go ahead and learn um I don't know more SQL or whatever not more
+10:13 SQL but like whatever needed to happen to get data from the row source to data
+10:19 warehouse so that they can continue working what they well that's literally how I started uh
+10:25 okay back then the in my first job when I was building dashboards the DVA he was
+10:30 not very pleasant and he was always super busy and uh very quickly I learned like the better I become with SQL,
+10:38 Python and doing my own shadow it my in my own computer the less I need from the
+10:45 external IT team. Uh so it could like for in my case definitely the it it was
+10:51 a reaction to the needs but going back to what exactly it is I think it's it's
+10:57 nice to break it into two pillars. The first one is the what do we do and
+11:02 that's very simple if you can summarize it in one phrase is taking the business
+11:08 reality so whatever your organization does and making sure that the data resembles that.
+11:15 Some people call it warehousing uh data modeling cleaning data sets preparing data sets
+11:23 for insights however you call it. And being honest, this activity of uh
+11:29 turning data into something that can be used for insights that has existed since
+11:35 70s, maybe earlier back when they had punch cards. That probably one of the
+11:40 big things that the uh skeptics of this ro say is like, oh yeah, but I've been doing this since the 80s, so what's the
+11:45 difference? To me, the difference is not the what, but the how. And that is very
+11:51 similar to what happened with software and data engineering. the emphasis
+11:56 started going more on the engineering part. We used to have a landscape.
+12:03 Let's talk like data back in the 90s, 2000s. It was the wild west. There was a
+12:09 lot of like let's make sure that things work. But I think as a field data has
+12:15 learned a lot from software engineering, DevOps and now there is a very big emphasis in like being rigorous,
+12:22 building things that are robust, being efficient, making things that scale. How
+12:28 I like to mention it is it's kind of like as a field we were too busy
+12:34 building bigger and faster cars and it's only now that the emphasis has shifted a
+12:39 little bit into making things safe. So the short one is an analytics
+12:47 engineering does a lot of analytics tasks which generally speaking is data
+12:52 modeling if you can just roughly summarize it but that also implies a bit more than that. And they always do it by
+13:00 applying software engineering best practices similar to how data engineers are doing
+13:07 well you could say it's glorified data cleaning and stuff but in reality no it's like there is rigor there is a
+13:13 scientific way it's about making things replicable um so the how we exactly get
+13:18 things done it's almost as important as what we actually do
+13:25 and um okay so analy ICS engineering there are two components two sides analytics and engineering. Analytics is
+13:33 u you say data modeling and other things and engineering is applying big best
+13:39 engineering practices to that right. Um but what exactly?
+13:45 So my experience with analysts working with analysts might be a bit um limited
+13:50 but from what I saw that what analysts do is they have very good domain knowledge business expertise and they
+13:58 know where things are. So they um so they can talk to business they can talk
+14:03 to product managers and um they help to understand where the company should move
+14:11 using datadriven approaches. Right? So let's say um I don't know we're implementing a new feature and we define
+14:19 the success criteria for this feature. It should grow the amount of users this way or the engagement of users this way.
+14:26 So typically analysts help to um um you know define what exactly these
+14:33 success criteria are. Um sometimes they also do ad hoc analytics like somebody
+14:38 says hey like how many users we have from this country and they they would go and check this data right. Um but what
+14:45 you say is uh you as analytics engineer do a lot of analytics which is data
+14:51 modeling which is not what I saw PE these people were doing maybe I am not
+14:57 correct what exactly you mean by data modeling and why do you call this analytics?
+15:03 Well, it's the the thing is that what exactly is implied under the umbrella of
+15:08 analytics, that part tends to get a bit fuzzy because some people that have the
+15:14 this hat of analytics engineer, they're just what you would call um some
+15:20 years ago like data warehouse developers. Now some people uh they actually
+15:29 resemble more what you would call a BI engineer. So somebody that prepares data
+15:36 sets for consumption so on. But I I still think the the difference there and
+15:42 like why is this not just a regular analyst job is because the philosophy
+15:48 and the way of doing it is a bit different. just in the specific case of analyst or maybe let's call it very
+15:55 specifically like I've seen people saying hey but I've been a BI engineer
+16:00 for years I built PowerBI or Tableau data sets since
+16:05 the 2000s why do you feel like you need to call it analytics engineering and I think
+16:13 because although the task feel very similar philosophically there is a big difference that is like if you check the
+16:20 for example Tableau or PowerBI sites you're going to see a big emphasis on uh speed of delivery so inside that the
+16:28 speed of thought building dashboards super quickly um you're going to see
+16:34 also some emphasis in ease of use analytics for everybody making analytics accessible
+16:41 but when you go to anything engineering analytics or data engineering the
+16:46 emphasis changes more to testability robustness, things that don't break. And
+16:52 this is super apparent when you compare like the marketing language between for example DVT and Tableau.
+17:00 Now there is of course a market for doing things quickly. There is a market for ease of use, self-service, giving
+17:07 data to everybody and empowering them. That's still a very valuable activity.
+17:12 But for some use cases uh that robustness is definitely worth um having
+17:19 as a main thing. Now some analysts in particular they you can say that they
+17:25 don't have the technical skills because there are some analyst jobs that are like maybe 95% business expertise and 5%
+17:34 excel like that does exist but even the ones that are very technical inclined
+17:40 and very good at programming they're still a bit too caught up with this philosophy of speed of delivery and
+17:47 um they haven't really internalized like things like the importance of testing your data or
+17:54 um you can understand where this is coming from because uh for example we want to
+18:00 um I don't know something happened uh in our production system and we want to understand the effect it has right and
+18:07 then typically what um they would do is maybe analyst would set up dashboard
+18:12 showing the impact right if there is enough data right so in this case you want to do this quickly right you don't
+18:19 want to spend two is um building this thing, right? So you want to have it
+18:24 now. So this is important for some things, but for some other things, you'd
+18:29 rather take things slower, right? Correct. There are one thing that a lot
+18:35 of people don't acknowledge is there are a lot of analyses that are one use only and that having them done quickly uh is
+18:43 maybe more important than always being right. So sometimes having numbers that are
+18:48 wrong can make a company lose millions and can sometimes like um people can get
+18:55 harm from it. Yeah. I imagine like let's say if CEO comes and says hey tomorrow I have a
+19:00 board meeting like quickly pull these numbers cuz we have a very important I don't know strategic meeting and then if
+19:06 analyst makes a mistake which is like I don't know a few millions off then yeah of course so maybe for this sort of ad
+19:13 hoc request like analysts need to have more time right yeah for sure so that's that's a big one
+19:22 uh I think the difference in analytics even when the anal analyst is like
+19:28 really good. I've met some analysts that are really good at even working with Python, with SQL, with that you might
+19:35 think that they have the right qualifications, but it still still feels
+19:41 a bit different. Yeah. Okay. We wanted to continue so I keep
+19:46 interrupting you probably. Oh, no, no worries. Uh I thought the place where you might want to go next is
+19:52 then what's the difference between this and a data engineer? No, I was curious about data modeling actually
+19:58 because uh so you said you do analytics engineer engineers do a lot of analytics
+20:04 which is data modeling and I was curious what exactly data modeling is. So for me I come from the software engineering
+20:10 background uh this is what I was doing before uh data science and there the biggest
+20:16 problem was um you have some we called it domain driven design. So you have
+20:21 some domain entities right and then you express them with classes with uh
+20:28 object-oriented programming whatever but then the challenge is you have these things and you want to map them to a
+20:34 database right database is tables and then how do you express all this complexity of your domain uh in table
+20:42 terms and this is difficult right because you want to
+20:47 have the f flexibility of object-oriented programming but then at the end you want to save the data to a database which is typically rel
+20:53 relational database. Um so yeah that was uh we called it domain driven design um
+21:00 part of it at least. Um so I wonder what data med modeling is in your case.
+21:08 Yes I I think I I make the mistake of assuming that everybody's familiar with the term but the truth is there are at
+21:14 least five six different definitions of model. like even what a model is is a
+21:19 different thing for a data scientist but uh maybe removing the word modeling uh
+21:25 indeed I'm I'm referring to exactly what you just mentioned which is how exactly do you design a database even like what
+21:33 constitutes a table what each row is supposed to represent how to turn information into a tabular
+21:42 format and so on that all constitutes um data modeling
+21:48 And it's kind of funny because some people like to say that data modeling was dormant for a lot of years.
+21:56 That's because back in the 70s until the 90s uh space in a database was such a
+22:02 big constraint that lots of the data modeling was to optimize space like
+22:09 normalizing a table to like the highest level and those things tend to be very
+22:15 impractical for an analyst but they do save space. I remember like normal forums. Uh yes,
+22:22 correct. And then people or I think there is uh there is a book Alexa, right?
+22:28 Yeah, for sure. Um definitely if you're anybody listening to this, you're interested in how to organize databases.
+22:35 I think googling the concept of normalization can be database normalization can be really
+22:40 enlightening. We studied this at university. Yeah, it's that's a f that's really what
+22:46 got me into this whole SQL thing. So back in the before the 90s as call it
+22:51 people were busy like how do we reduce space and make sure databases are as compact and efficient as possible. the
+22:58 2000s came we're talking Hadoop early Spark people thought like oh we don't
+23:04 care because we can brute force uh this problem with compute but I think lately
+23:10 as of the last I don't know if decade a bit longer a bit less I don't mind exactly about which state but recently
+23:17 there's been this um movement into hey um maybe compute or space or stuff like
+23:25 that is not a huge constraint which to start remodeling data. So reorganizing
+23:30 data inside of a database into something that one is easier for humans to
+23:36 maintain and two meaningful for the business.
+23:41 So um there is nothing nicer than for a business than to query a table called
+23:46 clients and that all of the information of a client is in there regardless of in
+23:51 the background. It's just like seven source systems that you try to Frankenstein together. If a database has
+23:58 exactly the same names that a business stakeholder expects and if it's
+24:04 very um simple and straightforward what each column is supposed to represent
+24:10 then you say that you're doing things uh really well um which is what I mentioned
+24:15 at the beginning bringing that business reality into a database
+24:20 probably still a big point in many organizations right yeah for sure it's a One of the most
+24:27 common gigs that I've done recently the the company where I uh worked previously my last company uh the way it
+24:34 was online marketplace and the way it was growing it was acquiring different marketplaces around um the world and
+24:42 each of these marketplace let's say they bought a company in Ukraine in Poland in Argentina in South Africa in India and
+24:50 then put them all together right and these were completely separated U
+24:56 systems, right? And now they needed to somehow unite. And imagine what kind of
+25:02 messy it is like how difficult it would be to have one unified data table for
+25:08 all the I don't know items like
+25:14 and what a lot of people don't realize is like being able to just that example
+25:19 let's say two companies merge they this one has their clients table and this one has their client table. turning both of
+25:26 those into one single client table. It's quite a task. It requires lots of
+25:32 uh it's a bit of a librarian work as in understanding all of the assets, classified them, knowing what you really
+25:39 have. It's a little bit of a business task because you need to know which information is going to be useful. Can
+25:46 you explain to me how this works? Um lots of mediation and stakeholder
+25:52 management. Like it's crazy like if you do data modeling you have to be in a
+25:57 room often with very important people in an organization uh sometimes even sea level or somewhere
+26:04 along those lines asking them like hey how do you think we should consiliate this data problem
+26:10 and that that requires a very specific uh profile of person just to be able to
+26:16 do it and of course the part I didn't mention but most of you inferred that also requires some SQL knowledge and
+26:23 some knowledge about data and databases. Previously I think this job was done by
+26:30 data engineers. Is it uh not? Yes. Not anymore or that that's another one of the big
+26:36 skepticisms. I I think um couple of months back I saw posting like oh analytics engineering is dead because
+26:42 it's a data engineer job. And the truth is look I
+26:48 I don't care what whatever works for your organization works. The reality is that before 2019 when this term was
+26:56 coined more often than not this task was
+27:01 assigned to the data engineering team. That's just a reality. Maybe even today
+27:06 you might be a data engineer still doing this part. But here is where the nuance
+27:12 gets and that is objectively in some organizations it
+27:19 makes a lot more sense to split this into two different roles. So it is possible that maybe in your
+27:26 organization it's fine that the data engineering does both of these tasks. One of them is like data infrastructure
+27:31 management and other one is data modeling. it it has worked for a lot of years but
+27:38 the truth is the expertise that you need for both tends to be tends to get large
+27:45 and even if you find a person that is capable of doing both of those tasks sometimes is a matter of preference um
+27:52 I've met some data engineers that literally tell me I just want to
+27:58 hide behind my computer if it's a matter of asking a sea level or a stakeholder how something works you go do it put the
+28:06 stake the stakeholder the scrum master whoever it is make sure that they do it and
+28:12 don't bother me with that so I do think that even though a lot of
+28:17 data engineers are capable and have been doing this for ages maybe it's kind of nice to let some
+28:24 people handle data infrastructure make sure that all of the data processes still run and some people do the
+28:31 modeling because they require different expertises different profiles and it's
+28:36 hard to find somebody that is equally qualified and interested in both. H now
+28:42 I understand your definition or your comment at the beginning that analytics engineers do what uh analysts and data
+28:50 engineers don't want to do and I guess this is the part that data engineers don't want to do like this all this
+28:56 modeling so they'd rather uh move data in Kafka or whatever but uh like you
+29:02 said right focus on the engineering work focus on uh performance focus on u like
+29:08 all these uh metrics engineering metrics uh and somebody else would take care of
+29:14 understanding okay like we have these two tables like how do we merge them? Yeah, for sure. So
+29:22 I I know from experience sometimes it's a matter of I don't like doing this.
+29:28 Do you like doing this? Yes. Okay. to me super important to have a
+29:33 very nice mix of technical stuff but also like um I really like the human
+29:39 side the having a nice excuse to understand the business to me is amazing
+29:45 I've tried to do both I had I used to be a consultant for a long time I didn't mention that I had some gigs that were
+29:52 100% technical and I had some gigs that were 100% talking to people I don't
+29:58 think I enjoyed them as much as the ones where I had like these very of very mix
+30:03 of doing a mix of both and I think the role of analytics engineering really
+30:09 encapsulates that. It gives you a chance to talk to stakeholders understand their business but also to nerd out about
+30:17 very technical stuff like to work with containers to think about how to
+30:22 optimize a table partitions whatever it is it has a little bit of both.
+30:28 Let's talk about the technical stuff. So here I see in comments in live chat that we have Mark Lamberti from Airflow. So
+30:36 he says he doesn't know enough about analytics engineering. And then I see another comment comment from Salo Mayor.
+30:45 I hope I pronounce your name correctly. Um they are wondering what uh do they
+30:52 need to know and I think this question is also like what do they need to know from the technical point of view. So can
+30:58 you tell us yes what do they need to know? Uh you mentioned containers, you mentioned
+31:03 Python, you mentioned u database what um modeling well I guess modeling is one
+31:10 thing is conceptual but another thing is like how do you actually optimize the the database the tables? So tell us more
+31:16 about that. Yes you I I try my best to keep this role 50/50. So if you ask me what do I
+31:22 need to learn, I'm going to try my best to give you 50% things that are very technical and 50% things that are more I
+31:30 don't know behavioral business whatever if we focus just on the technical the
+31:36 lazy answer of course is going to be DBT and we're probably going to discuss
+31:42 later why exactly that is that's the lazy answer talk about this but I don't want to interrupt you because I keep doing this
+31:48 too much but if like Let's pretend we live in a world without DBT. I guess the answer
+31:54 would be definitely SQL. Um
+32:01 yeah like the modern data platforms something like a data bricks snowflake
+32:07 bigquery uh tree know whatever it is they they're a very interesting thing to learn also
+32:14 because some of the other concepts like um
+32:19 um zero copy cloning and retention periods and stuff like that tend to come
+32:24 more often. What is that? Zero copy cloning. Oh yes. So in I think most tools have
+32:31 it. I believe Snowflake was the one that started this. It is possible to have
+32:37 copies of your data that are purely uh semantic. So instead of actually having
+32:44 two exact copies of your data, so essentially duplicating storage. It's like sim links on my computer.
+32:51 Sorry. Like sim links on my computer. like uh sure shortcuts like let's say you have uh a
+32:57 big file in one folder you want to have the same file in another folder instead of creating a copy entire copy and this
+33:04 file could be I don't know one gig you create a sim link which points to the original file so the process is in the
+33:10 other folder yes if you're dealing with the entire file it's kind of like a point in the pointer to the here is the actual data plus here
+33:18 is a list of the differences between this data and this one now of course if the become too big. I believe some
+33:25 things happen in the background. But the point is there are quite a lot of and by
+33:31 the way it's not that that's that's the only feature that matters but a lot of these features that come with modern
+33:36 warehouses um are very interesting. So definitely learning at least one of the modern ones is nice.
+33:43 Um I would dare to say Python is very
+33:48 important but more specifically how people tend to DevOps code with Python.
+33:55 So learning frameworks like pyest is interesting like how people containerize
+34:02 Python work is interesting. I'm curious sorry I want to interrupt
+34:07 you again. Um how exactly do you use Python? So to me um the work of analytics engineer
+34:14 again I am far from this world. So to me it seems like okay you have dbt so then
+34:19 um you have your source data you have your data models. So you what what you want to do is transformations you
+34:26 transform data from whatever source to whatever destination you use SQL for that and dbt takes care of orchestrating
+34:32 this whole thing and this is all done in SQL. Um so where does Python come into
+34:39 place? Yes. Back when I started uh my data career,
+34:45 kind of what most people believe, we're talking like very early data science. Um
+34:51 I started back when there was still Python 2.7 and most people were hesitant to move to three for those of you that
+34:57 are old enough to know when that was. Back then the understanding was SQL was
+35:02 nice for quick and dirty, but serious data work had to be done in Python.
+35:08 Spark, right? It has shifted a bit because now they brought a lot of the things that SQL was
+35:14 missing like capability of testing your SQL code and run it in different environments and so on. But
+35:22 as DVT just started they were SQL only. Now they support both SQL and Python
+35:28 models. But to me even if you don't do any of the data modeling work in Python
+35:35 I so for once most of the tools that we work with they have been built in Python
+35:43 or they have a Python wrapper or something along those lines.
+35:48 So for example, ah it's they were building Python. That's that's also like a very dangerous
+35:55 rabbit hole because somebody in the comments is gonna say like no we're building Rust and this is whatever but
+36:00 let me simplify to for example you can install DOC DV airflow
+36:07 um what else? DVT, a lots of tools you can simply install them with a pip
+36:12 install and Python is kind of the glue that keeps
+36:18 multiple tools together. So for example, other processes that are adjacent to
+36:24 data modeling but not exactly data modeling like orchestration, they're still done in Python. uh data
+36:31 ingestion lots of it is done either in Python or with Python adjacent
+36:37 frameworks like well DT I think are part of uh or they were definitely part of
+36:43 last year's thing that's really interesting so even though P python is kind of
+36:51 optional at the beginning it's super useful because it's truly the glue that
+36:56 uh puts let's say data modeling work in the context of your whole organization.
+37:03 With a little bit of Python, you can just uh ingest data somewhere
+37:10 uh get a message when the data is done ingesting or create an API where people can get the
+37:17 data from it or all sorts of things. So it's I I think it's also a very valuable
+37:23 thing. And while talking about Python, I remember my times being data data
+37:30 scientist where I needed to build a lot of um pipelines, transformation like transform
+37:37 data from one thing to another to feed into the models and um like I didn't
+37:44 like using SQL for reasons that for me it was hard to read, it was hard to
+37:50 modernize, it was hard to test and um some of the things you mentioned um but
+37:58 analysts really liked it uh cuz I guess it's simpler and also like when you
+38:04 already have a data platform you don't really need any other things so you can just take your SQL stuff you can run it
+38:10 and then you can schedule I don't know airflow job or whatever to run this thing and it runs on the warehouse right
+38:18 so there are a lot of benefits of SQL and from what I understood how analytics
+38:23 engineers can use both right for like when you need um but also there is there
+38:29 is testing in SQL right so maybe you can tell us more about this yes to being honest I still believe most
+38:35 of the work like 90% plus is still done in SQL but it's it's worth mentioning DVT supports models in in Python as well
+38:43 like how do you go about testing these pipelines SQL pipelines yeah correct so probably one of the
+38:49 reasons why when I first started people saw SQL as quick and dirty is because there was no good way of testing it.
+38:58 Um, whenever you test anything data specific, you always have to break it
+39:04 down into at least two components. One is testing your data and the other one is testing your code.
+39:11 Let's let's talk about testing the code because that's I think the one where DVT is excelling uh well excelling the the
+39:19 one where DVT like really um exceeded expectations compared to what we had
+39:25 before before um something
+39:30 expectations sorry I couldn't there there is library expectations right so
+39:35 it exceeded expectations yes yes That's it's just um I also want
+39:41 to make it clear is somebody in the comments going to say, "Oh, but DVT doesn't do this."
+39:47 Quite often when when I talk about it, it's because I I lived a little bit what we had before. And so I'm not saying DVT
+39:54 is perfect. In 20 years, we're going to see it and I don't know, our kids are going to laugh about how primitive our
+40:01 tools were. Fine. But before that,
+40:07 let me give you an example. back in in the 2018s I believe I had a client and
+40:13 we were building a dashboard for them. It was a very important dashboard. It was exposed to many people through a web
+40:19 portal. It was like from a government to their their audience. And so their way
+40:25 of testing is we had a checklist of things that had to be checked manually before we published the dashboard. And
+40:32 at first it was like 15 items. Testing took maybe like 10 minutes. That was
+40:37 fine, but there was a point where it got to like 70 items, more or less, and
+40:44 testing it was very tedious and annoying. And we're talking items, it's like make sure that the colors are
+40:51 exactly these ones. Make sure that no filters are selected by default. Make sure that if you filter for uh this
+40:59 building on this time, this is the right value. if you filter for those were all
+41:04 small tests and sadly because uh of the tools we were working all of that had to
+41:10 be done manually even though if I put now my 2026 classes I realized
+41:16 99% of this could have been automated with something like pyest if we would
+41:23 have chosen a BI tool that had like a way to interact with dashboards using code
+41:30 now um DVT allows you to once again uh test the code that you use for the SQL
+41:36 in many ways. The first one is through what they call generic tests. Also a
+41:42 couple of years back they changed the terminology but let's keep it simple. What was called generic tests is little
+41:51 flags that you can add to the documentation of the field saying is this unique? These are the accepted
+41:57 values. uh it should have um one to many relationship with this other table
+42:04 and every values that are supposed to be not nulls. You can expand this
+42:11 greatation was doing right. Sorry, there is a library called great expectation. I think this is what it was
+42:17 doing. Exactly. With great expectations, you can expand this to all sorts of things like uh the
+42:22 values of this column should match this reg x. Uh it should be between the
+42:28 ranges of this column should be between this and this number or they they have plenty of test.
+42:34 definitely look for DVT expectations to see all of the ways that people test
+42:40 generically. So that's one. You do that mostly at the column base. The second
+42:46 way that you test it is at the well sometimes table level. They call that
+42:52 singular test which is you write a snippet of SQL and if it returns more
+42:58 than one row sorry more than zero rows it's an error.
+43:03 For example, I I was working on a project where we had some vehicles that
+43:10 left a warehouse and every vehicle each of the I think six vehicles whatever had
+43:16 to be accounted for 24 hours of the day.
+43:22 Sometimes when we would do joints, maybe we were missing a day and so we accidentally filter out something and
+43:28 all of a sudden like, hey, we don't have data for this truck on this day or we don't have data for this truck at this
+43:34 hours. That was a lifesaver because at least a couple of times we accidentally exploded
+43:42 with the join because there was a many to many relationship and that told us hey no there are more than 24 hours and
+43:49 uh more often than not we accidentally filter something and it told us hey this vehicle is not accounted for. So
+43:55 singular uh tests mentioned generic the ones are singular. They also have unit
+44:01 tests that allows you to provide data. The best example is um an email regex.
+44:10 Let's say that you write some u formula with reg x that is this a valid email yes or no. You want to pass it a list of
+44:18 emails and say if I give you this it should be true. If I give you this it should be false and so on.
+44:24 And those are kind of the common ways. But the interesting part is you can also
+44:32 um put DVT inside of your CI run which I I don't know if any anybody's
+44:39 familiar with the term you probably will cover this in one of the parts but just
+44:45 to keep it simple and sorry for oversimplifying this it is possible to
+44:50 have it that whenever you're trying to push your code into GitHub
+44:56 that GitHub automatically runs the code and at the bare minimum it tells you hey
+45:03 this code is not running I'm not going to let you to merge this to our codebase that's the very minimum but you can
+45:09 expand it you can say hey uh I run this code is very expensive I'm not going to merge it or I run this code it doesn't
+45:16 match what I was explicitly told to match like it can be up to the data level like hey um the KPI for this month
+45:24 in this country should be equal to this If it's not matching, it's because something went wrong or the count of
+45:30 rows is not equal to this. That's quite sick. I honestly looking back at that
+45:35 dashboarding project that I mentioned, I would have loved to automate lots of
+45:41 these manual test that we had to do. And even better, it would have been amazing to have something that whenever you
+45:47 publish to Tableau server, it tells you, hey, uh, we cannot publish this because
+45:52 tool 7, sorry, test 72 is failing. Mhm.
+45:57 That would have been amazing. Yeah, we we don't cover this in the course though like testing, CI/CD, all
+46:04 these things are quite important but um yeah, we cannot cover everything. All right. And uh we kind so these
+46:11 things are usually what software engineers already know. So maybe for somebody who is coming more from like
+46:19 analytical background, analytics background, these are new terms. But yeah um we cannot cover this but these
+46:26 are very important concepts. Um so of course if you're watching this right now and you're also doing the course these
+46:33 are some of the things if you don't know this already if you're not coming from the software engineering background this
+46:39 some some of the things you should check after the the course. So for example,
+46:45 you create a project and then once the project is complete, you can think okay now how do I testing for this and now I
+46:53 want to every time I push my code to GitHub um I want to run this test out
+46:58 automatically and the good thing about today uh speaking of your 2026 glasses
+47:03 um so when you put them on you can realize that there are so many coding assistants around us like Codex Copilot
+47:12 CL code and so on. So what you can do is you can just ask them to assist you in
+47:17 doing this and then you will learn along the way because now Juan um introduced these concepts um so you will know what
+47:25 you're doing and then at least for me this is how I learn many things these days I ask an agent to implement this
+47:32 and then I try to figure out what is happening there. So really cool thing I totally recommend trying this after the
+47:38 course for sure. Yeah, I I recently um I know
+47:43 we were not supposed to talk too much about by coding, but I recently built my own websites and it's fascinating
+47:50 because part of it. I was like, "Please coach me how to do this."
+47:56 Mhm. So some parts I knew how to do, some parts I asked Cloud to coach me how to
+48:01 do it and explain to me and what happens in this situation and some parts I'm like, I don't care, you do it.
+48:08 Mhm. And that synergy went so well. I like I can super happy with the end process. And uh
+48:15 I I think I could have mindlessly boded the whole thing but I just I also took
+48:21 the opportunity to get like some uh coaching and I learned that thing of do about websites but
+48:26 bringing it back. Yes, I think uh learning everything GitHub and gits
+48:33 like most people in the data world they know the basics but I it's one of those
+48:39 things that I think like I wish I was like better at GitHub in general
+48:44 like yeah it's a very useful skill uh I see that there is a question what
+48:50 does the courseh cover which technologies I included a link uh and also if you're watching this in
+48:56 recording or listening in to this on a podcast platform just Google data engineer zoom camp and you will find an
+49:03 article from our data talks club web page and you will also find a github repo so check it out and you will find
+49:10 the answers there I don't want to spend a lot of time uh very quickly uh but um the the reason I don't want to
+49:19 spend a lot of time on that because I see that we have five questions from the audience and I wanted to cover yes
+49:24 two so Um the most important question is I'm
+49:29 exploring a move towards analytics analytics engineering. What books, docs
+49:34 or resources helped you most when you were learning data modeling and analytics engineering in general?
+49:40 I think I'm I'm surprised that we have spent this long without talking about DBT. So before we even talk about DVT,
+49:47 let me get out the way. I don't know if you're going to see it because I'm of course you're not going to see it. Oh yes. Uh this is the book I was
+49:54 talking about. Uh fundamentals of analytics engineering. People who are listening to this and not
+50:00 seeing the video. Can you describe what you showed? Yes. So the book I show is fundamentals
+50:05 of analytics engineering. I'm one of the co-auers. The selling point of this one is we try
+50:12 to make it evergreen. So when you pick it up, each chapter is
+50:17 going to be linked to one responsibility of an analytics engineer. like there is a chapter on data inestion, there is a
+50:23 chapter on data modeling, there is a chapter on um collaborating with code
+50:29 and so on and we try our best to not like give code examples that might be
+50:34 relevant in two years but to really talk about it very functionally. So I I do believe there are as far as I know six
+50:43 seven books that either talk directly about analytics engineering or kind of
+50:48 brush to some of the concepts. I do have all of them here in my library. From all
+50:54 of those I think ours um does really well that it's
+51:00 very timeless. So I'm I'm confident it's already a two year old book, but I'm
+51:05 confident it's still going to be relevant in five years. It's not a book about AI where things change in two months, right?
+51:12 So it's more timeless. So that's definitely one. But the second one is check everything DVT. DVT has
+51:20 some amazing courses. Um just a lot of those courses are free. They have great
+51:26 documentation. I sometimes think about it like you know how if you want to learn music theory
+51:32 they ask you to learn the piano I think with analytics engineering is
+51:38 something similar with DVT like knowing DVT doesn't make you an analytics engineer but it's like the way where you
+51:44 put in practice things like knowledge about data modeling your um business um
+51:52 skills stakeholder management to your even your engineering best practices. Uh
+51:58 it's a really good platform to to get started and acquire all of these
+52:03 adjacent skills in the way. Um so to me it seems like it's synonymous synonymous analytics
+52:11 analytics engineering and DBT because yes when we talk about analytics engineering we always talk about DBT but does it
+52:17 have to be this way I know there are alternatives right SQL mesh mesh right
+52:23 are there other things yeah so what happens is um I think DVT
+52:29 is also similar to me riding the wave early
+52:34 uh back In 2019, it was actually a blog called Locally Optimistic, the ones that
+52:40 uh coined the term analytics engineering. Ah, that was them. No, it wasn't DBT. It was
+52:46 No, no, like it was indeed. I know it's also a community. Yes.
+52:51 Okay. So, this this is them who came up with the term. I forgot the the name of the person, but
+52:57 I guess if you Google locally optimistic analytics engineering, you would go there.
+53:02 uh and DVT started riding that wave very very soon after
+53:09 and they've really managed to become synonymous of the field from a let's
+53:14 call it academic perspective I do believe that this is a discipline that
+53:20 can live outside of DBT like
+53:25 uh like there are some DVT alternatives that people can can use And technically
+53:32 you could implement like engineering rigor to working just directly with uh
+53:37 SQL stuff I guess so but it's just that DVT wrote that wave very very early and
+53:45 they really have tried to embody all of this doing analytics with um software
+53:51 engineering best practices and a lot of that has been built into their product
+53:58 and also let's be honest they they're probably the ones that are like
+54:05 advocating for this term and evangelizing it. Uh they have spent lots
+54:10 of marketing and making sure that people know it. And sometimes I see on LinkedIn and and
+54:16 places like oh but there are other tools that used to do this before and you don't need DVT to be an analytics
+54:23 engineer and blah blah. But I I do think there is some merit because they
+54:30 whatever forget if they're not the first or forget if they're not the best at it. I don't care about those. Maybe they
+54:36 are, maybe they aren't. But they have spent a lot of time and effort in educating the community as in
+54:43 hey if you're going to do analytics you should be following all of these like
+54:49 data ops or like software engineering best practices. And our platform comes
+54:54 integrated with this. So that is very easy for you to do this. So things like working with multiple
+55:01 environments uh testing your data, documenting uh your data, lots of that
+55:07 comes very naturally to DVT. So it's once again to me it's a little bit of if
+55:12 you want to learn music theory learn piano and uh try to find a nice balance
+55:18 between the tool the piano DVT and the concept
+55:25 and if DBT is piano what is SQL mesh ah
+55:30 guitar it's h it's a it's a tricky one now dvt
+55:36 where before SQL mesh that's definitely True. And let's go back to maybe when
+55:43 was that when was coles back in October I believe. Let's go back to let's say
+55:49 like summer last year. Uh lots of people were super interested in SQL mesh
+55:55 because they brought some ideas that uh DVT was not implementing or didn't have
+56:00 at all. uh things like for example you know in terraform how they um if you
+56:08 change Terraform code to remove an asset and you do a Terraform apply notices hey
+56:14 um this cloud resource that is currently deployed is not in your code let me delete it.
+56:20 So it had like knowledge of the state of your cloud resources. SQL mesh had
+56:25 something very similar in the sense that with dbt if
+56:32 I don't know if you code something with a name you deploy it then you regret it rename it it's still going to be
+56:38 deployed like the cleanup is not that simple or use better ways to do it but it didn't come
+56:46 as part of the product as neatly as SQL mesh had it s mesh had also some great ideas like um instead of YAML they were
+56:54 a lot more declarative uh not too much ginger and so on. So it
+57:00 was definitely some interesting things in that product but it's worth noticing that uh as of October Fiverr acquired
+57:09 them and uh when it happened like my initial reaction was okay finally there will
+57:16 there will be a real competitor to DBT. Yeah. Right. Because five time would invest.
+57:21 Yeah. And then another thing happened like maybe two weeks after that they announce the DVT and fiveware merging.
+57:30 Now a merger is not finalized yet. Who knows maybe regulators can say like
+57:36 no I'm not interest I think they will I'm not an expert in these things but it is possible that
+57:43 both DVT and their second best option are going to be in the umbrella of the same company. Mhm.
+57:50 Both of them they have open source alternatives. So literally nothing is stopping you from forking it and um
+57:58 continue forward um whatever your own version of any of these tools but
+58:03 they're now under uh the same one. Mhm. Being honest with you and I'm not a
+58:09 business VC capital experts business. If you ask me it doesn't look good for
+58:16 SEC mesh. Well, I I think they're going to just merge them into one.
+58:21 Oh, that would be good actually. Like if they do this. Yeah, but for the founders, maybe that was a good exit. I don't know.
+58:27 I Man, I have no idea. Uh but what what is like interesting to mention is um
+58:36 I think they they did it wisely because if they would have um let's say merged with DVT
+58:45 and people said no I don't want my company to be merged with five trend
+58:50 migrating to SQL mesh was immediate like DVT projects were fully compatible with
+58:55 SQL mesh so people would have if there was something about DVT that people wouldn't have liked. People could have
+59:01 migrated in an instant. Yeah. But now it's just kind of interesting that now they have both. So um
+59:10 let's just say the biggest two tools in that area. Uh now there are some others but I me
+59:17 personally I don't think they apply software engineering best practices as well. So like the two that really embody
+59:24 analytics engineering the best uh now they have some sort of connection with Fiverr either being acquired or in the
+59:32 process of being merged with. Okay. So we have a few more questions. I
+59:38 wanted to ask one question from Brian. Um we are taking more time than I planned. It's we planned it for 1 hour.
+59:44 You still have time right? Oh I thought it was planning to two. It was a mistake. So it means you have
+59:52 time, right? Yes. Good. Happy to. We still have quite a lot of people. So thanks to the 100 people who are still
+59:59 sticking around. So it's amazing. Nice. Yeah. Imagine like 100 people listening to us right now. That's amazing.
+1:00:06 Anyways, Brian is asking, is it relevant to build data warehouse using data modeling now when we have all this
+1:00:13 lakehouse architecture, iceberg, drio, um, and things like that? like all these
+1:00:20 new technologies. Oh yeah, for sure. I I don't see why they are like opposites or something.
+1:00:28 Um, generally speaking, uh, some of these technologies and
+1:00:35 let's let's talk more about the concept of a lakehouse. Yeah, it's kind of nice because data warehouse, right?
+1:00:41 Yes. So data warehouse is where we keep our data. So this is a database that is
+1:00:47 optimized for analytical queries, right? So this is a data warehouse. Sorry, sometimes I talk about like
+1:00:52 assuming that everybody knows both of course we cover it in our data engineering course. So I already
+1:00:58 included the link in the description. Uh shameless plug but anyways so we have a data warehouse. What is a lakehouse?
+1:01:05 Because we don't cover lakehouse in the course. Yes. So maybe uh interesting to mention
+1:01:10 is data warehouses their databases for analytical purposes but what matters is
+1:01:16 the data there is properly model and integrated and all of the tables should be able to join with each other and blah
+1:01:22 blah. Data leaks is just like dumping data directly from a system somewhere. You
+1:01:29 can do it well and it can be organized and everything but nobody has taken the trouble to integrate that data. So there
+1:01:36 is often in a data league not such a thing as the client's I was going to say table but it's more like the client's
+1:01:42 directory or the client's folder it's more like data coming from Google analytics data coming from the CRM data
+1:01:49 coming from and it's up to the data scientist or whoever to put it together in a way that you
+1:01:56 need it now lakeous and to answer to your question sorry for the detour
+1:02:03 they have essentially managed to decouple both. So you can still dump the data as as it lands maybe per source
+1:02:11 system per whatever in a data lake but you still have an business or logical
+1:02:18 representation on top that people can query. So yes you can definitely do
+1:02:25 both. They don't have to contradict with each other. Uh, but what is really important to say and this is one that I
+1:02:32 constantly laugh is some people think that just dumping all of the data from a source system into a
+1:02:39 folder is enough. Uh, that's I would argue that's the easy part. The difficult part is to put that data
+1:02:45 together into something that resembles their business. So like to reconciliate
+1:02:51 data from all sorts of systems and turn it into something that is very obvious
+1:02:56 for people. To me that business integration work is the most difficult
+1:03:01 part. Uh and so that's why like data lake projects are a lot faster than data
+1:03:07 warehousing projects because that integration is so just want to summarize to understand
+1:03:12 what um what you said. So we have some systems let's say I don't know let's say
+1:03:19 we have meetup system where people can sign up for events. So many people who
+1:03:24 are watching us right now they came from there. So let's say I want to build analytics on top of people who come up
+1:03:31 who come to our events. So what I can do is just get a dump of all the emails to
+1:03:37 a folder in S3, right? And that would be our data lake, right? Cuz we use Metab,
+1:03:44 we use Luma, we use LinkedIn. So I would have three folders, Meetup, Luma, uh
+1:03:49 LinkedIn, right? With whatever raw data they provide, I just take it and dump it
+1:03:54 to S3 or Google Cloud Storage or whatever. And I can call it data lake,
+1:04:00 right? Because the data is there. to query it and get insights from it. There is a process like data engineers set up
+1:04:06 a process that every day um I don't know at
+12:00
+1:04:11 pulls the data from meetup all the fresh data and puts this into a specific folder in my data lakeink right so we
+1:04:19 have that so now this data is accessible I can use something like I don't know
+1:04:24 presto or whatever to query this data right so we have the data lake
+1:04:30 um it's not a very house yet cuz like it's just a bunch of JSON or pocket
+1:04:35 files, right? So in order to for this to turn into a warehouse, we need to do
+1:04:43 data modeling, right? So we need to model the table which would include like the source and then common
+1:04:50 column names, right? The email name, yeah, whatever, right? So then um then I
+1:04:56 can build at the end I can build a dashboard to understand where from which platform people are coming from right um
+1:05:04 whether they are joining and things like that. Yeah. So we have the lake we have
+1:05:10 the data warehouse. data warehouse could be something like snowflake or bigquery something that is fast something that is
+1:05:17 um or click house something that can um respond immediately very fast right so
+1:05:23 then this is what analysts are working on they don't work with uh data links they work with uh data warehouses
+1:05:31 and lake house is u best of both worlds so it's like the
+1:05:37 under nine data lake but on top of let's call it a logical representation that
+1:05:43 you can query with SQL like if it was a data warehouse and okay maybe maybe I misunderstood the question
+1:05:50 that was originally made but I could argue that even though you can build
+1:05:57 stuff directly from quering a data lake turning the data into something that is
+1:06:03 intuitive and that really speaks to people especially non techies it's a
+1:06:09 very valuable effort effort. It's an stupid amount of work to turn all of
+1:06:15 those source systems into something called customer table.
+1:06:20 But um I do think that effort is worth it
+1:06:25 and right now in in this year we're in this paradigm of modeling the data into
+1:06:31 something that is uh easy to maintain and two um intuitive for whoever is
+1:06:37 quering these tables. So if the data has been modeled properly
+1:06:44 um for let's say that you hire a new analyst a new data scientist a new whatever even a data engineer is not
+1:06:51 about technical versus nontechnical for that person it's going to be a lot more intuitive to know where to find things
+1:06:56 and how to work with um the data assets that are are in there. Mhm. So just to
+1:07:04 finish um what I was like the example I was trying to come up with and what you
+1:07:10 just said. So lakehouse would be something between data lake and warehouse. So where instead of putting
+1:07:16 these things in bigquery or click house or whatever we would just create another folder in our data lake right and then
+1:07:25 it would we already would do all the data modeling. And we would already define okay this is how our data this is
+1:07:31 what the the final representation of our data is we define the table we define the types uh but instead of saving it
+1:07:38 into bigquery we would save it into a folder in our data lake right and then uh all the analysts all the data
+1:07:44 scientists everywhere could just query this data lake folder um works table
+1:07:51 whatever it will be slower it will have to actually you know go there to S3 fetch the data but we will have the
+1:07:58 benefits of having done the data modeling part already and having all the
+1:08:04 business thinking and stuff like so then the fields are clear understandable we
+1:08:09 can do some analytics there is just slower that's what not necessarily slower then
+1:08:16 what's the difference like between the river house and lake house in this case yes so um the
+1:08:24 the thing is that the the whole lake house it's something that data bricks invented like that's that's their
+1:08:31 marketing. I see. And I think Lake House is to me like the best uh what's the difference between
+1:08:38 analytics engineer and data engineering. Often what I see in practice uh is that
+1:08:44 the data engineers are the ones building the data lake. So taking data from here, dumping it there, taking data from here,
+1:08:51 dumping it there. But a lot of times data engineers they don't want to or they don't they they just don't uh do
+1:08:59 the business integration. So like bothering like what is in this data that I just push into this location is what
+1:09:05 is the data quality anything that we need to work with. Analytics engineers are often the ones
+1:09:12 that take whatever gets dumped into the data lake and they build like the business logical representation.
+1:09:19 Now in maybe in some cases it's slower but the truth is there are some tools
+1:09:25 like fabric data bricks and to a lesser extent things like snowflake and so on
+1:09:30 that that's actually how they work. Um now data bricks and fabric they directly
+1:09:37 call it uh lakehouse but snowflake also has kind of like a
+1:09:43 data lake integrated where they save your data as files and you just build
+1:09:48 like the logical representation with u the actual snowflake UI type of thing.
+1:09:54 So mhm okay thank you. I see a few questions about the data engineering
+1:10:00 course. So if somebody has no experience in data engineering, will this course help? Yes, it will. Um, so I don't want
+1:10:08 to spend a lot of time on that. So what I will do is I will share a link to Luma
+1:10:14 to the Luma event. Next week on Monday the course starts. So I will copy the
+1:10:20 link and I will put it in the uh description
+1:10:26 also live chat. Uh so what you can do is you can just um
+1:10:32 spend some time reading the course curriculum. Uh it's the GitHub repo I sent and then if you're interested come
+1:10:39 on our launch stream where you I will present the course and you will also get
+1:10:46 uh to ask the questions. So this would be a better place to actually talk about the course. And there was another
+1:10:53 question is um sorry what are good resources that you
+1:10:59 recommend to somebody who wants to learn data engineering and it involves data links um
+1:11:06 of course I cannot give any other recommendation but our data engineering uh zoom camp uh but maybe like Juan I'll
+1:11:14 ask you so if somebody wants to ask if somebody wants to learn data engineering
+1:11:19 and data links do you know any other resources you would recommend in addition to data in addition to data
+1:11:25 engineism camp. Oh um I recently um by the way last year
+1:11:31 in 2025 uh my role was to teach uh junior data engineers
+1:11:37 and so let's say last year I went through a lot of the resources out there.
+1:11:43 I think uh data bricks has some really good courses uh for free. Some of them are paid but
+1:11:49 like the free ones are really good. Definitely great resources to learn data engineering. Uh
+1:11:57 I think it makes full sense to if you don't know anything about data engineering start at the data warehouse
+1:12:04 or lakehouse part. So either learn data bricks or snowflake or so on but it's
+1:12:10 it's a whole ecosystem of tools. Uh for example astronomer has amazing courses if you want to learn about orchestration
+1:12:16 which is part of the whole thing. Uh, Snowflake has also some good courses for free. DVT I already mentioned, amazing
+1:12:24 academy with courses. Uh, the Linux Foundation has courses in not only like
+1:12:30 Bash and Linux, which are really relevant skills, but they also have courses in Kubernetes,
+1:12:36 all of the cloud providers, uh, like Azure, GCP,
+1:12:41 uh, AWS. They do have free courses and paid certifications.
+1:12:47 pick the ones that are specifically branded towards data. So for example, the data engineer professional for GCP,
+1:12:56 they teach about all from all of the services, just the ones that have to do something with data. I think all of
+1:13:04 those are really good things. Pick one. If you don't know where to start, I'm going to stick my hand in the fire and
+1:13:09 say go for data bricks. But plenty of companies are doing amazing uh free content and of course
+1:13:17 all of the work that Alex is doing. Check the videos from previous years as well. Really cool resources.
+1:13:25 So BigQuery data bricks or snowflake. Me personally,
+1:13:31 yeah, I used to be the biggest Snowflake fan
+1:13:37 until like let's call it 2022. At first I kind of struggle with it but
+1:13:44 um oh god I'm making it so transit. Let's just say in the last two years I'm
+1:13:49 convinced I'm more team data bricks. Mhm. I've always like really really like data
+1:13:55 bricks. I just thought that maybe before the pandemic times snowflakes offering
+1:14:01 was a bit more solid. Why? Because data bricks used to be a nightmare to admin like the whole month
+1:14:08 clusters no oversight of things that you had to be very technical to
+1:14:14 they were focusing on spark primarily right but now is spark
+1:14:20 yes but now I think um it's becoming a lot easier to to work with they they're
+1:14:28 doing some amazing stuff I I also tell to people that it's a little bit of um it's kind of like comparing fridges.
+1:14:36 It's not that you're going to buy a new fridge if a new model comes that is like 10% better,
+1:14:42 but this is kind of relevant for people that either haven't learned any of them
+1:14:47 or people that are looking for the next for dead organization at this moment.
+1:14:54 I think data bricks has a bit of a more solid offer and fully biased. I I'm enjoying working
+1:15:01 with data bricks a bit more than what I'm enjoying Snowflake, but both of them are very solid and once
+1:15:07 again it's kind of a five 10% better fridge. Um, also they
+1:15:13 keep on adding new features. So maybe in
+1:15:19 three months you revisit this thing and it has aged horribly. Also, uh,
+1:15:25 Snowflake is there is this project on an open semantic layer that is supposed to
+1:15:30 be universal. Snowflake is going for that and lots of tools that Snowflake has invested in, they're there. If that
+1:15:39 thing pans out, that could be massive. I'm just a huge fan of, for example, uh
+1:15:45 how data bricks right now has like Unity, but they also have like lots of
+1:15:50 control over um Delta, which I think it's a really cool
+1:15:56 project, but who knows? Like we have iceberg, we have this um Snowflake might come up
+1:16:04 with something amazing. Snowflake is buying some amazing companies like recently I heard like select star.
+1:16:11 Look, in in two months I could have a completely different opinion because the data landscape is so fast, but if it's
+1:16:20 just this moment in time, I'm enjoying data bricks a bit more than the competitors.
+1:16:26 Did you try Click House? No, but I heard some amazing thing. More
+1:16:31 than hearing some people that I really admire like I've seen some amazing talks from them have been recently like
+1:16:38 posting on LinkedIn. Hey, I'm working for this company right now. So, I'm like, "Oh, I I should check what what
+1:16:44 these people are up to." Oh, and I love Duck DB. Mhm. DB. Uh Duck DB. Uh they also have
+1:16:52 uh Every House, right? So, there's Mother Duck. Oh, yes. Mother Duck. That's their um
+1:16:58 paid offering. Yes. Yeah. And they there they have some very housing solutions as far as I know.
+1:17:04 Yeah. Yeah. But of course I was talking data bricks snowflake but in reality most of
+1:17:12 my personal projects now are dog db and in fact
+1:17:18 for the course uh there are two setups there is the cloud setup and the local setup I
+1:17:24 changed it used to be posgress but posgress was a bit harder to set up so starting from this year the local
+1:17:30 setup is going to use TV and the reason for that is because it's very lightweight it's super easy to
+1:17:37 install. The UI looks very nice, very sleek. Um, they have full support for
+1:17:43 analytics. So all of those fun analytical modern SQL things like like
+1:17:49 what like qualify or like uh
+1:17:55 I don't know I agree by all all of these fun shortcuts and TV supports them
+1:18:03 and because it's so lightweight sometimes you can inside of your CI pipeline you can spin it up and test it
+1:18:10 and um I just I it's so convenient that But I find myself using it for more and more
+1:18:16 things. You mentioned that you hosted DBT meetup. Can you talk can you tell us
+1:18:22 more about that that Yes. Yeah. Um I've been hosting meetup since 2018. Um currently I'm just the
+1:18:31 organizer of the Dutch TV meetup. Um, but in the past I've organized and
+1:18:36 founded the analytics engineering meetup, the Dutch data visualization meetup and I've helped with some others.
+1:18:43 But yes, um I I love meetups. I think it's um when when I was younger,
+1:18:51 I really used to like organizing parties at my house, like hosting parties and getting people
+1:18:57 together, making sure they had a fun time. The the parties you organize now as you become older, right? Yeah, I realize
+1:19:05 this is like the corporate equivalent. It's it's amaz for the company hosting is
+1:19:11 amazing marketing like rarely you get the undivided attention from the
+1:19:17 important or the most knowledgeable data people in your area for two hours.
+1:19:23 for the people presenting it's an amazing career opportunity to get your hands wet in I don't know becoming a a
+1:19:31 better professional or learning stuff about data for some people it's kind of like therapy and just complaining about
+1:19:40 actually in my first job and I noticed this happens to a lot of people sometimes you you're in this position
+1:19:45 where like you feel that you're the only person in the company that understands your job or cares about it and so all of
+1:19:52 a sudden Being in a room with people that have similar issues, it's kind of relieving. Uh
+1:19:58 but therapeutical to me. What I really get out of it is I love well for example this that we're
+1:20:05 having right now. I love uh meeting interesting people and a meetup is a really good experience to a really good
+1:20:12 excuse to contact them like hey I really admire your work. I follow your uh
+1:20:17 contributions to this repo. I saw your other conference talk. Would you like to give a talk of our meetup? That gives me
+1:20:23 a nice excuse to talk to them and I think oil organizing a meeting cost me
+1:20:32 five to 10 hours and it just feels that it does like some
+1:20:38 really good stuff for the local data community. So I'm I'm a huge fan of Where do you do them? Amsterdam.
+1:20:44 Amsterdam. Yes, correct. But um I I try my best to sometimes when I'm abroad to
+1:20:49 visit them. Like I do have this um this goal of talking in 10 different DVT
+1:20:55 meetups throughout my career. I'm currently at eight. So I have had the chance to like
+1:21:02 whenever I'm traveling the world and there happens to be a DVT meetup around I try to
+1:21:07 go and um it's super fun to see how the communities are slightly different.
+1:21:13 Is it meetup.com or where do you host it? meetup.com. Okay. Please send us the link. Uh so
+1:21:20 we'll include it uh in the description for anyone who is in who lives in that area.
+1:21:25 So yeah, please check it out. Well, I think yeah, we took half an hour
+1:21:30 more. Well, minus the 5 minute uh minutes at the beginning, but yeah, it was really big pleasure for me to talk
+1:21:38 to you. Juan, thanks a lot. For sure. Question. We didn't touch many things. Um cuz I kind of went into the
+1:21:45 technical side and we missed the uh nontechnical side cuz you said it's 50/50 and then cuz we also had questions
+1:21:52 from the audience. We kind of forgot the nontechnical part. Um but we all
+1:21:58 understand it's important. So maybe at some point you will also tell us more about that. But it was really good to
+1:22:06 hear all that and I see from people from the live chat uh people really enjoyed
+1:22:11 it and many stayed till now. So this is cool. Thanks everyone for joining us for
+1:22:17 asking questions. There was um I saw a lot of um lovely discussions in the live
+1:22:23 chat. Amazing. Thank you. Nice. So maybe for everybody still watching feel free to connect with me uh
+1:22:30 on LinkedIn. Happy to chat chat with some of you, answer some questions and to get to know more of you. I hope to
+1:22:37 see many of you in the course. I'm currently recording a lot of the videos that you're going to see and I'm going
+1:22:42 to be available if you follow the data zoom camp. And finally, uh thank you
+1:22:47 Alexa. I really enjoyed it and u I'm I'm a huge fan for all of the cool stuff that you do for the community. Uh, I've
+1:22:54 seen a lot of your videos, your courses, and uh, I really really enjoy how you're
+1:23:00 bringing more accessibility to this uh, for anybody that just wants to follow it
+1:23:05 for free. Thank you, Bart. And, uh, yeah, for those who want to learn more
+1:23:11 about the course, I saw a lot of questions about it. Please come next week on Monday for the course launch. Uh
+1:23:19 and then also next week uh we will have a workshop with Juan about DBT which
+1:23:24 will become a part of the course even though it's module number four. We will pre-record it. Um so then you can also
+1:23:32 see it earlier if you want. So yeah it's going to be a lot of fun. Um so yeah
+1:23:39 looking forward to seeing more content from you. Thanks a lot. Perfect. Look forward to working with
+1:23:45 you in the future. Bye everyone.
+0:00 welcome to uh this um podcast interview and I want to ask you to tell us a few
+0:07 words about yourself maybe shortly and then also tell us about your career journey right so how did you start what
+0:14 did you do um maybe if you want you can tell us what you studied and how did you
+0:19 end up doing what you do now yes so I am Juan I was born and raised in Colombia but I've been living in the
+0:25 Netherlands for very soon it's going to be 15 years So quite a journey.
+0:31 Professionally speaking, I actually studied psychology uh like 10 plus years
+0:38 ago. I back then I was like super interested in psychological research in
+0:43 experimentation and stuff like that. And uh well the the truth is I I realized
+0:50 before graduating that maybe the field of data and the field of programming
+0:56 kind of encapsulated more what I wanted from a career than doing psychological research. So somewhere in my masters I
+1:04 decided to start learning programming and uh that led me to this rabbit hole.
+1:09 Just a quick thing sorry u because there there is different kind of psychology in
+1:15 your case were you doing some u studies like conducting correct
+1:20 experiment so I I was not like a how are you feeling and psychological problem
+1:26 type of person. I really enjoyed uh conducting experiments as in like
+1:31 connecting people to an electronaloggram or um fMRI or TSM or all sorts of
+1:39 technologies to study the brain that was to know statistics quite well for that
+1:45 right to conduct these experiments these studies. Yeah, actually yes. It's very
+1:51 different because um I think it's funny when when you're doing statistics on a
+1:57 very small sample size of like 80 people, things like inference become a lot more important. But when you have
+2:03 like streams, event data or like millions of clients, it's not about inference. It's about you already have
+2:10 like a lot of the population down there. But yeah, technically that was a a soft
+2:16 introduction to data, but the truth is um eventually worked my way into
+2:22 building dashboards. That was probably my first career.
+2:27 And I think I did that for a couple of years. I used to be a Tableau consultant
+2:32 until I realized that what I really wanted to do was everything database
+2:38 related. I really like everything from data modeling, writing SQL, even the
+2:45 administration part I thought was quite interesting. So probably for the last seven eight years I've been doing mostly
+2:52 SQL work and what is really interesting about analytics engineering in particular is
+3:00 back in 2020 uh and we're going to go through the history of analytics engineering but for
+3:06 context the first time somebody coined that term was mid209. So in early 2020, a recruiter reached
+3:14 out to me uh for a company where I actually already applied as a data engineer. Back then the conclusion was
+3:21 like oh I don't know you using two analytics to to go through this rabbit hole of data
+3:28 engineering. But yeah he reached out to me uh he said hey I have the perfect
+3:33 role for you. It's called analytics engineering. Back then I had no idea what it meant.
+3:39 Um, but that was a really cool opportunity. I was the first first analytics engineer in a company back in
+3:47 2020. Back then on Dutch LinkedIn, there was absolutely nobody else with that job
+3:53 title. So, I I always said I'm definitely not the best analytics engineer out there, but I was certainly
+4:00 one of the first uh that took it on themselves to co-uild this whole thing. And it's been
+4:08 really nice because um at the very first years like 2021 even 2022
+4:16 a big part of the role was to educate the markets on like what exactly this is how do we do it the technologies why is
+4:24 this valuable even to explain it to my own colleagues and back then I founded
+4:30 the first analytics engineering meetup I became the founder of the Dutch well co-founder of the Dutch DBT meetup as
+4:37 Well, and even packed reached out to me to write a book uh and I wrote it with
+4:42 some of my colleagues uh from back then. It's called fundamentals of analytics
+4:47 engineering. So, it was um a little bit of being at the right place at the right time. just
+4:55 being able to ride that wave of analytics engineering so early um brought up quite a lot of very
+5:01 interesting opportunities and it it's a very interesting role I even
+5:08 now like preparing for this webinar this whole week I've been watching all sorts of YouTube videos people discussing it
+5:15 you see everything people with takes that I don't fully agree with people with takes that surprise me uh lots of
+5:22 skepticism so I I think this is an amazing opportunity to discuss a little
+5:28 bit what it is, what it isn't and and um yeah, just explain to
+5:34 everybody why it's an interesting career choice and hopefully that gets them excited for module number four of the
+5:41 upcoming data engineering zoom camp. Yeah. And uh uh to me um the story of
+5:47 analytics engineer was uh it started with Victoria who is the the instructor
+5:52 we mentioned. Um so when uh we just started the slack data talks club slack I had this habit
+6:00 of talking to everyone who joined and she was like among the first uh few hundred people. So then back then since
+6:07 it wasn't like super huge volume I was able to talk to everyone and she was one of these few people and I was asking her
+6:13 her like hey what do you do and she was like yeah I'm doing this and that and u she was basically describing analytics
+6:19 engineering and I'm like what the hell is that like like I I know who are
+6:24 analysts I know who are data engineers but like this is something new and uh this u let's say encounter that we u met
+6:34 through slack was very useful because when we started the data engineering course
+6:40 and we run a poll uh before we started the course we run a poll what people
+6:46 want to see in the course and the top wanted thing was analytics engineering.
+6:51 So people wanted to see analytics engineering as a chapter as a module in the data engineering course and we were
+6:57 like okay what is that and Victoria back then volunteered to take the lead on
+7:03 that part. So which was pretty pretty cool. Um and from what I understood back then to
+7:10 me at least it was analytics engineering is the role that sits between analysts and engineers. So this is the analyst
+7:18 who can do a bit of engineering who doesn't need to wait for engineers to implement some things but also has the
+7:25 capacity of an analyst to explain different different things to stakeholders. So this is a person in
+7:30 between and the main tool for doing that for analytics engineers is DPT like how
+7:36 correct this um assessment is in your opinion. it it's a short summary but I do think
+7:43 there are some nuances that are very often misinterpreted which we can build on but even before I start explaining
+7:50 what it is I think it's really interesting to maybe you don't know the story but the reason I'm here is back
+7:57 when I was on paternity leave a couple of years back I actually followed the
+8:02 zoom camp myself I probably learned like most of the terraform that I know from from you
+8:09 and back Then I was already really good at DVT, but I did see uh Victoria's
+8:14 course. I thought it was so interesting that I reached out to her and said, "Hey, do you want a copy of the book? We're really curious what you would
+8:20 think." And uh that's a little bit of how it started. So it's
+8:25 yeah, she's a really interesting profile. Mhm. But uh summarizing analytics engineering
+8:30 the the first thing that I would I like to mention is as a field we make the
+8:36 mistake of defining it by what it isn't.
+8:42 Quite often when you're ask like what is an analytics engineer is you hear something like bridging the gap between
+8:48 analyst and data engineer or um in fact my probably my first real definition
+8:55 used to be anything that a data engineer and an analyst cannot or doesn't want to
+9:00 do but that's that's not that great to let yourself be defined by yeah
+9:06 okay I I thought people just wanted to have analysts who also are good at engineering not at data engineers don't
+9:12 do this but like the reason I am I have this idea is because I was a data
+9:19 scientist and as a data scientist we data scientists don't like engineering
+9:24 we don't like deployment like on average we don't like deploying models we don't like uh you know going deep and um
+9:33 thinking like uh why do build takes forever optimizing things like these sort of things but engineers were always
+9:40 busy like let's Hey, I wanted to deploy something but then I needed somebody who could help me with Kubernetes but they
+9:47 were always busy. So what I had to do is I had to learn Kubernetes myself to deploy it and I thought that maybe
+9:54 analytics engineer is it appeared in the same way. So analysts
+10:00 were forced to wait for data engineers to finish something but they were busy something else. So they thought okay how
+10:07 about we just go ahead and learn um I don't know more SQL or whatever not more
+10:13 SQL but like whatever needed to happen to get data from the row source to data
+10:19 warehouse so that they can continue working what they well that's literally how I started uh
+10:25 okay back then the in my first job when I was building dashboards the DVA he was
+10:30 not very pleasant and he was always super busy and uh very quickly I learned like the better I become with SQL,
+10:38 Python and doing my own shadow it my in my own computer the less I need from the
+10:45 external IT team. Uh so it could like for in my case definitely the it it was
+10:51 a reaction to the needs but going back to what exactly it is I think it's it's
+10:57 nice to break it into two pillars. The first one is the what do we do and
+11:02 that's very simple if you can summarize it in one phrase is taking the business
+11:08 reality so whatever your organization does and making sure that the data resembles that.
+11:15 Some people call it warehousing uh data modeling cleaning data sets preparing data sets
+11:23 for insights however you call it. And being honest, this activity of uh
+11:29 turning data into something that can be used for insights that has existed since
+11:35 70s, maybe earlier back when they had punch cards. That probably one of the
+11:40 big things that the uh skeptics of this ro say is like, oh yeah, but I've been doing this since the 80s, so what's the
+11:45 difference? To me, the difference is not the what, but the how. And that is very
+11:51 similar to what happened with software and data engineering. the emphasis
+11:56 started going more on the engineering part. We used to have a landscape.
+12:03 Let's talk like data back in the 90s, 2000s. It was the wild west. There was a
+12:09 lot of like let's make sure that things work. But I think as a field data has
+12:15 learned a lot from software engineering, DevOps and now there is a very big emphasis in like being rigorous,
+12:22 building things that are robust, being efficient, making things that scale. How
+12:28 I like to mention it is it's kind of like as a field we were too busy
+12:34 building bigger and faster cars and it's only now that the emphasis has shifted a
+12:39 little bit into making things safe. So the short one is an analytics
+12:47 engineering does a lot of analytics tasks which generally speaking is data
+12:52 modeling if you can just roughly summarize it but that also implies a bit more than that. And they always do it by
+13:00 applying software engineering best practices similar to how data engineers are doing
+13:07 well you could say it's glorified data cleaning and stuff but in reality no it's like there is rigor there is a
+13:13 scientific way it's about making things replicable um so the how we exactly get
+13:18 things done it's almost as important as what we actually do
+13:25 and um okay so analy ICS engineering there are two components two sides analytics and engineering. Analytics is
+13:33 u you say data modeling and other things and engineering is applying big best
+13:39 engineering practices to that right. Um but what exactly?
+13:45 So my experience with analysts working with analysts might be a bit um limited
+13:50 but from what I saw that what analysts do is they have very good domain knowledge business expertise and they
+13:58 know where things are. So they um so they can talk to business they can talk
+14:03 to product managers and um they help to understand where the company should move
+14:11 using datadriven approaches. Right? So let's say um I don't know we're implementing a new feature and we define
+14:19 the success criteria for this feature. It should grow the amount of users this way or the engagement of users this way.
+14:26 So typically analysts help to um um you know define what exactly these
+14:33 success criteria are. Um sometimes they also do ad hoc analytics like somebody
+14:38 says hey like how many users we have from this country and they they would go and check this data right. Um but what
+14:45 you say is uh you as analytics engineer do a lot of analytics which is data
+14:51 modeling which is not what I saw PE these people were doing maybe I am not
+14:57 correct what exactly you mean by data modeling and why do you call this analytics?
+15:03 Well, it's the the thing is that what exactly is implied under the umbrella of
+15:08 analytics, that part tends to get a bit fuzzy because some people that have the
+15:14 this hat of analytics engineer, they're just what you would call um some
+15:20 years ago like data warehouse developers. Now some people uh they actually
+15:29 resemble more what you would call a BI engineer. So somebody that prepares data
+15:36 sets for consumption so on. But I I still think the the difference there and
+15:42 like why is this not just a regular analyst job is because the philosophy
+15:48 and the way of doing it is a bit different. just in the specific case of analyst or maybe let's call it very
+15:55 specifically like I've seen people saying hey but I've been a BI engineer
+16:00 for years I built PowerBI or Tableau data sets since
+16:05 the 2000s why do you feel like you need to call it analytics engineering and I think
+16:13 because although the task feel very similar philosophically there is a big difference that is like if you check the
+16:20 for example Tableau or PowerBI sites you're going to see a big emphasis on uh speed of delivery so inside that the
+16:28 speed of thought building dashboards super quickly um you're going to see
+16:34 also some emphasis in ease of use analytics for everybody making analytics accessible
+16:41 but when you go to anything engineering analytics or data engineering the
+16:46 emphasis changes more to testability robustness, things that don't break. And
+16:52 this is super apparent when you compare like the marketing language between for example DVT and Tableau.
+17:00 Now there is of course a market for doing things quickly. There is a market for ease of use, self-service, giving
+17:07 data to everybody and empowering them. That's still a very valuable activity.
+17:12 But for some use cases uh that robustness is definitely worth um having
+17:19 as a main thing. Now some analysts in particular they you can say that they
+17:25 don't have the technical skills because there are some analyst jobs that are like maybe 95% business expertise and 5%
+17:34 excel like that does exist but even the ones that are very technical inclined
+17:40 and very good at programming they're still a bit too caught up with this philosophy of speed of delivery and
+17:47 um they haven't really internalized like things like the importance of testing your data or
+17:54 um you can understand where this is coming from because uh for example we want to
+18:00 um I don't know something happened uh in our production system and we want to understand the effect it has right and
+18:07 then typically what um they would do is maybe analyst would set up dashboard
+18:12 showing the impact right if there is enough data right so in this case you want to do this quickly right you don't
+18:19 want to spend two is um building this thing, right? So you want to have it
+18:24 now. So this is important for some things, but for some other things, you'd
+18:29 rather take things slower, right? Correct. There are one thing that a lot
+18:35 of people don't acknowledge is there are a lot of analyses that are one use only and that having them done quickly uh is
+18:43 maybe more important than always being right. So sometimes having numbers that are
+18:48 wrong can make a company lose millions and can sometimes like um people can get
+18:55 harm from it. Yeah. I imagine like let's say if CEO comes and says hey tomorrow I have a
+19:00 board meeting like quickly pull these numbers cuz we have a very important I don't know strategic meeting and then if
+19:06 analyst makes a mistake which is like I don't know a few millions off then yeah of course so maybe for this sort of ad
+19:13 hoc request like analysts need to have more time right yeah for sure so that's that's a big one
+19:22 uh I think the difference in analytics even when the anal analyst is like
+19:28 really good. I've met some analysts that are really good at even working with Python, with SQL, with that you might
+19:35 think that they have the right qualifications, but it still still feels
+19:41 a bit different. Yeah. Okay. We wanted to continue so I keep
+19:46 interrupting you probably. Oh, no, no worries. Uh I thought the place where you might want to go next is
+19:52 then what's the difference between this and a data engineer? No, I was curious about data modeling actually
+19:58 because uh so you said you do analytics engineer engineers do a lot of analytics
+20:04 which is data modeling and I was curious what exactly data modeling is. So for me I come from the software engineering
+20:10 background uh this is what I was doing before uh data science and there the biggest
+20:16 problem was um you have some we called it domain driven design. So you have
+20:21 some domain entities right and then you express them with classes with uh
+20:28 object-oriented programming whatever but then the challenge is you have these things and you want to map them to a
+20:34 database right database is tables and then how do you express all this complexity of your domain uh in table
+20:42 terms and this is difficult right because you want to
+20:47 have the f flexibility of object-oriented programming but then at the end you want to save the data to a database which is typically rel
+20:53 relational database. Um so yeah that was uh we called it domain driven design um
+21:00 part of it at least. Um so I wonder what data med modeling is in your case.
+21:08 Yes I I think I I make the mistake of assuming that everybody's familiar with the term but the truth is there are at
+21:14 least five six different definitions of model. like even what a model is is a
+21:19 different thing for a data scientist but uh maybe removing the word modeling uh
+21:25 indeed I'm I'm referring to exactly what you just mentioned which is how exactly do you design a database even like what
+21:33 constitutes a table what each row is supposed to represent how to turn information into a tabular
+21:42 format and so on that all constitutes um data modeling
+21:48 And it's kind of funny because some people like to say that data modeling was dormant for a lot of years.
+21:56 That's because back in the 70s until the 90s uh space in a database was such a
+22:02 big constraint that lots of the data modeling was to optimize space like
+22:09 normalizing a table to like the highest level and those things tend to be very
+22:15 impractical for an analyst but they do save space. I remember like normal forums. Uh yes,
+22:22 correct. And then people or I think there is uh there is a book Alexa, right?
+22:28 Yeah, for sure. Um definitely if you're anybody listening to this, you're interested in how to organize databases.
+22:35 I think googling the concept of normalization can be database normalization can be really
+22:40 enlightening. We studied this at university. Yeah, it's that's a f that's really what
+22:46 got me into this whole SQL thing. So back in the before the 90s as call it
+22:51 people were busy like how do we reduce space and make sure databases are as compact and efficient as possible. the
+22:58 2000s came we're talking Hadoop early Spark people thought like oh we don't
+23:04 care because we can brute force uh this problem with compute but I think lately
+23:10 as of the last I don't know if decade a bit longer a bit less I don't mind exactly about which state but recently
+23:17 there's been this um movement into hey um maybe compute or space or stuff like
+23:25 that is not a huge constraint which to start remodeling data. So reorganizing
+23:30 data inside of a database into something that one is easier for humans to
+23:36 maintain and two meaningful for the business.
+23:41 So um there is nothing nicer than for a business than to query a table called
+23:46 clients and that all of the information of a client is in there regardless of in
+23:51 the background. It's just like seven source systems that you try to Frankenstein together. If a database has
+23:58 exactly the same names that a business stakeholder expects and if it's
+24:04 very um simple and straightforward what each column is supposed to represent
+24:10 then you say that you're doing things uh really well um which is what I mentioned
+24:15 at the beginning bringing that business reality into a database
+24:20 probably still a big point in many organizations right yeah for sure it's a One of the most
+24:27 common gigs that I've done recently the the company where I uh worked previously my last company uh the way it
+24:34 was online marketplace and the way it was growing it was acquiring different marketplaces around um the world and
+24:42 each of these marketplace let's say they bought a company in Ukraine in Poland in Argentina in South Africa in India and
+24:50 then put them all together right and these were completely separated U
+24:56 systems, right? And now they needed to somehow unite. And imagine what kind of
+25:02 messy it is like how difficult it would be to have one unified data table for
+25:08 all the I don't know items like
+25:14 and what a lot of people don't realize is like being able to just that example
+25:19 let's say two companies merge they this one has their clients table and this one has their client table. turning both of
+25:26 those into one single client table. It's quite a task. It requires lots of
+25:32 uh it's a bit of a librarian work as in understanding all of the assets, classified them, knowing what you really
+25:39 have. It's a little bit of a business task because you need to know which information is going to be useful. Can
+25:46 you explain to me how this works? Um lots of mediation and stakeholder
+25:52 management. Like it's crazy like if you do data modeling you have to be in a
+25:57 room often with very important people in an organization uh sometimes even sea level or somewhere
+26:04 along those lines asking them like hey how do you think we should consiliate this data problem
+26:10 and that that requires a very specific uh profile of person just to be able to
+26:16 do it and of course the part I didn't mention but most of you inferred that also requires some SQL knowledge and
+26:23 some knowledge about data and databases. Previously I think this job was done by
+26:30 data engineers. Is it uh not? Yes. Not anymore or that that's another one of the big
+26:36 skepticisms. I I think um couple of months back I saw posting like oh analytics engineering is dead because
+26:42 it's a data engineer job. And the truth is look I
+26:48 I don't care what whatever works for your organization works. The reality is that before 2019 when this term was
+26:56 coined more often than not this task was
+27:01 assigned to the data engineering team. That's just a reality. Maybe even today
+27:06 you might be a data engineer still doing this part. But here is where the nuance
+27:12 gets and that is objectively in some organizations it
+27:19 makes a lot more sense to split this into two different roles. So it is possible that maybe in your
+27:26 organization it's fine that the data engineering does both of these tasks. One of them is like data infrastructure
+27:31 management and other one is data modeling. it it has worked for a lot of years but
+27:38 the truth is the expertise that you need for both tends to be tends to get large
+27:45 and even if you find a person that is capable of doing both of those tasks sometimes is a matter of preference um
+27:52 I've met some data engineers that literally tell me I just want to
+27:58 hide behind my computer if it's a matter of asking a sea level or a stakeholder how something works you go do it put the
+28:06 stake the stakeholder the scrum master whoever it is make sure that they do it and
+28:12 don't bother me with that so I do think that even though a lot of
+28:17 data engineers are capable and have been doing this for ages maybe it's kind of nice to let some
+28:24 people handle data infrastructure make sure that all of the data processes still run and some people do the
+28:31 modeling because they require different expertises different profiles and it's
+28:36 hard to find somebody that is equally qualified and interested in both. H now
+28:42 I understand your definition or your comment at the beginning that analytics engineers do what uh analysts and data
+28:50 engineers don't want to do and I guess this is the part that data engineers don't want to do like this all this
+28:56 modeling so they'd rather uh move data in Kafka or whatever but uh like you
+29:02 said right focus on the engineering work focus on uh performance focus on u like
+29:08 all these uh metrics engineering metrics uh and somebody else would take care of
+29:14 understanding okay like we have these two tables like how do we merge them? Yeah, for sure. So
+29:22 I I know from experience sometimes it's a matter of I don't like doing this.
+29:28 Do you like doing this? Yes. Okay. to me super important to have a
+29:33 very nice mix of technical stuff but also like um I really like the human
+29:39 side the having a nice excuse to understand the business to me is amazing
+29:45 I've tried to do both I had I used to be a consultant for a long time I didn't mention that I had some gigs that were
+29:52 100% technical and I had some gigs that were 100% talking to people I don't
+29:58 think I enjoyed them as much as the ones where I had like these very of very mix
+30:03 of doing a mix of both and I think the role of analytics engineering really
+30:09 encapsulates that. It gives you a chance to talk to stakeholders understand their business but also to nerd out about
+30:17 very technical stuff like to work with containers to think about how to
+30:22 optimize a table partitions whatever it is it has a little bit of both.
+30:28 Let's talk about the technical stuff. So here I see in comments in live chat that we have Mark Lamberti from Airflow. So
+30:36 he says he doesn't know enough about analytics engineering. And then I see another comment comment from Salo Mayor.
+30:45 I hope I pronounce your name correctly. Um they are wondering what uh do they
+30:52 need to know and I think this question is also like what do they need to know from the technical point of view. So can
+30:58 you tell us yes what do they need to know? Uh you mentioned containers, you mentioned
+31:03 Python, you mentioned u database what um modeling well I guess modeling is one
+31:10 thing is conceptual but another thing is like how do you actually optimize the the database the tables? So tell us more
+31:16 about that. Yes you I I try my best to keep this role 50/50. So if you ask me what do I
+31:22 need to learn, I'm going to try my best to give you 50% things that are very technical and 50% things that are more I
+31:30 don't know behavioral business whatever if we focus just on the technical the
+31:36 lazy answer of course is going to be DBT and we're probably going to discuss
+31:42 later why exactly that is that's the lazy answer talk about this but I don't want to interrupt you because I keep doing this
+31:48 too much but if like Let's pretend we live in a world without DBT. I guess the answer
+31:54 would be definitely SQL. Um
+32:01 yeah like the modern data platforms something like a data bricks snowflake
+32:07 bigquery uh tree know whatever it is they they're a very interesting thing to learn also
+32:14 because some of the other concepts like um
+32:19 um zero copy cloning and retention periods and stuff like that tend to come
+32:24 more often. What is that? Zero copy cloning. Oh yes. So in I think most tools have
+32:31 it. I believe Snowflake was the one that started this. It is possible to have
+32:37 copies of your data that are purely uh semantic. So instead of actually having
+32:44 two exact copies of your data, so essentially duplicating storage. It's like sim links on my computer.
+32:51 Sorry. Like sim links on my computer. like uh sure shortcuts like let's say you have uh a
+32:57 big file in one folder you want to have the same file in another folder instead of creating a copy entire copy and this
+33:04 file could be I don't know one gig you create a sim link which points to the original file so the process is in the
+33:10 other folder yes if you're dealing with the entire file it's kind of like a point in the pointer to the here is the actual data plus here
+33:18 is a list of the differences between this data and this one now of course if the become too big. I believe some
+33:25 things happen in the background. But the point is there are quite a lot of and by
+33:31 the way it's not that that's that's the only feature that matters but a lot of these features that come with modern
+33:36 warehouses um are very interesting. So definitely learning at least one of the modern ones is nice.
+33:43 Um I would dare to say Python is very
+33:48 important but more specifically how people tend to DevOps code with Python.
+33:55 So learning frameworks like pyest is interesting like how people containerize
+34:02 Python work is interesting. I'm curious sorry I want to interrupt
+34:07 you again. Um how exactly do you use Python? So to me um the work of analytics engineer
+34:14 again I am far from this world. So to me it seems like okay you have dbt so then
+34:19 um you have your source data you have your data models. So you what what you want to do is transformations you
+34:26 transform data from whatever source to whatever destination you use SQL for that and dbt takes care of orchestrating
+34:32 this whole thing and this is all done in SQL. Um so where does Python come into
+34:39 place? Yes. Back when I started uh my data career,
+34:45 kind of what most people believe, we're talking like very early data science. Um
+34:51 I started back when there was still Python 2.7 and most people were hesitant to move to three for those of you that
+34:57 are old enough to know when that was. Back then the understanding was SQL was
+35:02 nice for quick and dirty, but serious data work had to be done in Python.
+35:08 Spark, right? It has shifted a bit because now they brought a lot of the things that SQL was
+35:14 missing like capability of testing your SQL code and run it in different environments and so on. But
+35:22 as DVT just started they were SQL only. Now they support both SQL and Python
+35:28 models. But to me even if you don't do any of the data modeling work in Python
+35:35 I so for once most of the tools that we work with they have been built in Python
+35:43 or they have a Python wrapper or something along those lines.
+35:48 So for example, ah it's they were building Python. That's that's also like a very dangerous
+35:55 rabbit hole because somebody in the comments is gonna say like no we're building Rust and this is whatever but
+36:00 let me simplify to for example you can install DOC DV airflow
+36:07 um what else? DVT, a lots of tools you can simply install them with a pip
+36:12 install and Python is kind of the glue that keeps
+36:18 multiple tools together. So for example, other processes that are adjacent to
+36:24 data modeling but not exactly data modeling like orchestration, they're still done in Python. uh data
+36:31 ingestion lots of it is done either in Python or with Python adjacent
+36:37 frameworks like well DT I think are part of uh or they were definitely part of
+36:43 last year's thing that's really interesting so even though P python is kind of
+36:51 optional at the beginning it's super useful because it's truly the glue that
+36:56 uh puts let's say data modeling work in the context of your whole organization.
+37:03 With a little bit of Python, you can just uh ingest data somewhere
+37:10 uh get a message when the data is done ingesting or create an API where people can get the
+37:17 data from it or all sorts of things. So it's I I think it's also a very valuable
+37:23 thing. And while talking about Python, I remember my times being data data
+37:30 scientist where I needed to build a lot of um pipelines, transformation like transform
+37:37 data from one thing to another to feed into the models and um like I didn't
+37:44 like using SQL for reasons that for me it was hard to read, it was hard to
+37:50 modernize, it was hard to test and um some of the things you mentioned um but
+37:58 analysts really liked it uh cuz I guess it's simpler and also like when you
+38:04 already have a data platform you don't really need any other things so you can just take your SQL stuff you can run it
+38:10 and then you can schedule I don't know airflow job or whatever to run this thing and it runs on the warehouse right
+38:18 so there are a lot of benefits of SQL and from what I understood how analytics
+38:23 engineers can use both right for like when you need um but also there is there
+38:29 is testing in SQL right so maybe you can tell us more about this yes to being honest I still believe most
+38:35 of the work like 90% plus is still done in SQL but it's it's worth mentioning DVT supports models in in Python as well
+38:43 like how do you go about testing these pipelines SQL pipelines yeah correct so probably one of the
+38:49 reasons why when I first started people saw SQL as quick and dirty is because there was no good way of testing it.
+38:58 Um, whenever you test anything data specific, you always have to break it
+39:04 down into at least two components. One is testing your data and the other one is testing your code.
+39:11 Let's let's talk about testing the code because that's I think the one where DVT is excelling uh well excelling the the
+39:19 one where DVT like really um exceeded expectations compared to what we had
+39:25 before before um something
+39:30 expectations sorry I couldn't there there is library expectations right so
+39:35 it exceeded expectations yes yes That's it's just um I also want
+39:41 to make it clear is somebody in the comments going to say, "Oh, but DVT doesn't do this."
+39:47 Quite often when when I talk about it, it's because I I lived a little bit what we had before. And so I'm not saying DVT
+39:54 is perfect. In 20 years, we're going to see it and I don't know, our kids are going to laugh about how primitive our
+40:01 tools were. Fine. But before that,
+40:07 let me give you an example. back in in the 2018s I believe I had a client and
+40:13 we were building a dashboard for them. It was a very important dashboard. It was exposed to many people through a web
+40:19 portal. It was like from a government to their their audience. And so their way
+40:25 of testing is we had a checklist of things that had to be checked manually before we published the dashboard. And
+40:32 at first it was like 15 items. Testing took maybe like 10 minutes. That was
+40:37 fine, but there was a point where it got to like 70 items, more or less, and
+40:44 testing it was very tedious and annoying. And we're talking items, it's like make sure that the colors are
+40:51 exactly these ones. Make sure that no filters are selected by default. Make sure that if you filter for uh this
+40:59 building on this time, this is the right value. if you filter for those were all
+41:04 small tests and sadly because uh of the tools we were working all of that had to
+41:10 be done manually even though if I put now my 2026 classes I realized
+41:16 99% of this could have been automated with something like pyest if we would
+41:23 have chosen a BI tool that had like a way to interact with dashboards using code
+41:30 now um DVT allows you to once again uh test the code that you use for the SQL
+41:36 in many ways. The first one is through what they call generic tests. Also a
+41:42 couple of years back they changed the terminology but let's keep it simple. What was called generic tests is little
+41:51 flags that you can add to the documentation of the field saying is this unique? These are the accepted
+41:57 values. uh it should have um one to many relationship with this other table
+42:04 and every values that are supposed to be not nulls. You can expand this
+42:11 greatation was doing right. Sorry, there is a library called great expectation. I think this is what it was
+42:17 doing. Exactly. With great expectations, you can expand this to all sorts of things like uh the
+42:22 values of this column should match this reg x. Uh it should be between the
+42:28 ranges of this column should be between this and this number or they they have plenty of test.
+42:34 definitely look for DVT expectations to see all of the ways that people test
+42:40 generically. So that's one. You do that mostly at the column base. The second
+42:46 way that you test it is at the well sometimes table level. They call that
+42:52 singular test which is you write a snippet of SQL and if it returns more
+42:58 than one row sorry more than zero rows it's an error.
+43:03 For example, I I was working on a project where we had some vehicles that
+43:10 left a warehouse and every vehicle each of the I think six vehicles whatever had
+43:16 to be accounted for 24 hours of the day.
+43:22 Sometimes when we would do joints, maybe we were missing a day and so we accidentally filter out something and
+43:28 all of a sudden like, hey, we don't have data for this truck on this day or we don't have data for this truck at this
+43:34 hours. That was a lifesaver because at least a couple of times we accidentally exploded
+43:42 with the join because there was a many to many relationship and that told us hey no there are more than 24 hours and
+43:49 uh more often than not we accidentally filter something and it told us hey this vehicle is not accounted for. So
+43:55 singular uh tests mentioned generic the ones are singular. They also have unit
+44:01 tests that allows you to provide data. The best example is um an email regex.
+44:10 Let's say that you write some u formula with reg x that is this a valid email yes or no. You want to pass it a list of
+44:18 emails and say if I give you this it should be true. If I give you this it should be false and so on.
+44:24 And those are kind of the common ways. But the interesting part is you can also
+44:32 um put DVT inside of your CI run which I I don't know if any anybody's
+44:39 familiar with the term you probably will cover this in one of the parts but just
+44:45 to keep it simple and sorry for oversimplifying this it is possible to
+44:50 have it that whenever you're trying to push your code into GitHub
+44:56 that GitHub automatically runs the code and at the bare minimum it tells you hey
+45:03 this code is not running I'm not going to let you to merge this to our codebase that's the very minimum but you can
+45:09 expand it you can say hey uh I run this code is very expensive I'm not going to merge it or I run this code it doesn't
+45:16 match what I was explicitly told to match like it can be up to the data level like hey um the KPI for this month
+45:24 in this country should be equal to this If it's not matching, it's because something went wrong or the count of
+45:30 rows is not equal to this. That's quite sick. I honestly looking back at that
+45:35 dashboarding project that I mentioned, I would have loved to automate lots of
+45:41 these manual test that we had to do. And even better, it would have been amazing to have something that whenever you
+45:47 publish to Tableau server, it tells you, hey, uh, we cannot publish this because
+45:52 tool 7, sorry, test 72 is failing. Mhm.
+45:57 That would have been amazing. Yeah, we we don't cover this in the course though like testing, CI/CD, all
+46:04 these things are quite important but um yeah, we cannot cover everything. All right. And uh we kind so these
+46:11 things are usually what software engineers already know. So maybe for somebody who is coming more from like
+46:19 analytical background, analytics background, these are new terms. But yeah um we cannot cover this but these
+46:26 are very important concepts. Um so of course if you're watching this right now and you're also doing the course these
+46:33 are some of the things if you don't know this already if you're not coming from the software engineering background this
+46:39 some some of the things you should check after the the course. So for example,
+46:45 you create a project and then once the project is complete, you can think okay now how do I testing for this and now I
+46:53 want to every time I push my code to GitHub um I want to run this test out
+46:58 automatically and the good thing about today uh speaking of your 2026 glasses
+47:03 um so when you put them on you can realize that there are so many coding assistants around us like Codex Copilot
+47:12 CL code and so on. So what you can do is you can just ask them to assist you in
+47:17 doing this and then you will learn along the way because now Juan um introduced these concepts um so you will know what
+47:25 you're doing and then at least for me this is how I learn many things these days I ask an agent to implement this
+47:32 and then I try to figure out what is happening there. So really cool thing I totally recommend trying this after the
+47:38 course for sure. Yeah, I I recently um I know
+47:43 we were not supposed to talk too much about by coding, but I recently built my own websites and it's fascinating
+47:50 because part of it. I was like, "Please coach me how to do this."
+47:56 Mhm. So some parts I knew how to do, some parts I asked Cloud to coach me how to
+48:01 do it and explain to me and what happens in this situation and some parts I'm like, I don't care, you do it.
+48:08 Mhm. And that synergy went so well. I like I can super happy with the end process. And uh
+48:15 I I think I could have mindlessly boded the whole thing but I just I also took
+48:21 the opportunity to get like some uh coaching and I learned that thing of do about websites but
+48:26 bringing it back. Yes, I think uh learning everything GitHub and gits
+48:33 like most people in the data world they know the basics but I it's one of those
+48:39 things that I think like I wish I was like better at GitHub in general
+48:44 like yeah it's a very useful skill uh I see that there is a question what
+48:50 does the courseh cover which technologies I included a link uh and also if you're watching this in
+48:56 recording or listening in to this on a podcast platform just Google data engineer zoom camp and you will find an
+49:03 article from our data talks club web page and you will also find a github repo so check it out and you will find
+49:10 the answers there I don't want to spend a lot of time uh very quickly uh but um the the reason I don't want to
+49:19 spend a lot of time on that because I see that we have five questions from the audience and I wanted to cover yes
+49:24 two so Um the most important question is I'm
+49:29 exploring a move towards analytics analytics engineering. What books, docs
+49:34 or resources helped you most when you were learning data modeling and analytics engineering in general?
+49:40 I think I'm I'm surprised that we have spent this long without talking about DBT. So before we even talk about DVT,
+49:47 let me get out the way. I don't know if you're going to see it because I'm of course you're not going to see it. Oh yes. Uh this is the book I was
+49:54 talking about. Uh fundamentals of analytics engineering. People who are listening to this and not
+50:00 seeing the video. Can you describe what you showed? Yes. So the book I show is fundamentals
+50:05 of analytics engineering. I'm one of the co-auers. The selling point of this one is we try
+50:12 to make it evergreen. So when you pick it up, each chapter is
+50:17 going to be linked to one responsibility of an analytics engineer. like there is a chapter on data inestion, there is a
+50:23 chapter on data modeling, there is a chapter on um collaborating with code
+50:29 and so on and we try our best to not like give code examples that might be
+50:34 relevant in two years but to really talk about it very functionally. So I I do believe there are as far as I know six
+50:43 seven books that either talk directly about analytics engineering or kind of
+50:48 brush to some of the concepts. I do have all of them here in my library. From all
+50:54 of those I think ours um does really well that it's
+51:00 very timeless. So I'm I'm confident it's already a two year old book, but I'm
+51:05 confident it's still going to be relevant in five years. It's not a book about AI where things change in two months, right?
+51:12 So it's more timeless. So that's definitely one. But the second one is check everything DVT. DVT has
+51:20 some amazing courses. Um just a lot of those courses are free. They have great
+51:26 documentation. I sometimes think about it like you know how if you want to learn music theory
+51:32 they ask you to learn the piano I think with analytics engineering is
+51:38 something similar with DVT like knowing DVT doesn't make you an analytics engineer but it's like the way where you
+51:44 put in practice things like knowledge about data modeling your um business um
+51:52 skills stakeholder management to your even your engineering best practices. Uh
+51:58 it's a really good platform to to get started and acquire all of these
+52:03 adjacent skills in the way. Um so to me it seems like it's synonymous synonymous analytics
+52:11 analytics engineering and DBT because yes when we talk about analytics engineering we always talk about DBT but does it
+52:17 have to be this way I know there are alternatives right SQL mesh mesh right
+52:23 are there other things yeah so what happens is um I think DVT
+52:29 is also similar to me riding the wave early
+52:34 uh back In 2019, it was actually a blog called Locally Optimistic, the ones that
+52:40 uh coined the term analytics engineering. Ah, that was them. No, it wasn't DBT. It was
+52:46 No, no, like it was indeed. I know it's also a community. Yes.
+52:51 Okay. So, this this is them who came up with the term. I forgot the the name of the person, but
+52:57 I guess if you Google locally optimistic analytics engineering, you would go there.
+53:02 uh and DVT started riding that wave very very soon after
+53:09 and they've really managed to become synonymous of the field from a let's
+53:14 call it academic perspective I do believe that this is a discipline that
+53:20 can live outside of DBT like
+53:25 uh like there are some DVT alternatives that people can can use And technically
+53:32 you could implement like engineering rigor to working just directly with uh
+53:37 SQL stuff I guess so but it's just that DVT wrote that wave very very early and
+53:45 they really have tried to embody all of this doing analytics with um software
+53:51 engineering best practices and a lot of that has been built into their product
+53:58 and also let's be honest they they're probably the ones that are like
+54:05 advocating for this term and evangelizing it. Uh they have spent lots
+54:10 of marketing and making sure that people know it. And sometimes I see on LinkedIn and and
+54:16 places like oh but there are other tools that used to do this before and you don't need DVT to be an analytics
+54:23 engineer and blah blah. But I I do think there is some merit because they
+54:30 whatever forget if they're not the first or forget if they're not the best at it. I don't care about those. Maybe they
+54:36 are, maybe they aren't. But they have spent a lot of time and effort in educating the community as in
+54:43 hey if you're going to do analytics you should be following all of these like
+54:49 data ops or like software engineering best practices. And our platform comes
+54:54 integrated with this. So that is very easy for you to do this. So things like working with multiple
+55:01 environments uh testing your data, documenting uh your data, lots of that
+55:07 comes very naturally to DVT. So it's once again to me it's a little bit of if
+55:12 you want to learn music theory learn piano and uh try to find a nice balance
+55:18 between the tool the piano DVT and the concept
+55:25 and if DBT is piano what is SQL mesh ah
+55:30 guitar it's h it's a it's a tricky one now dvt
+55:36 where before SQL mesh that's definitely True. And let's go back to maybe when
+55:43 was that when was coles back in October I believe. Let's go back to let's say
+55:49 like summer last year. Uh lots of people were super interested in SQL mesh
+55:55 because they brought some ideas that uh DVT was not implementing or didn't have
+56:00 at all. uh things like for example you know in terraform how they um if you
+56:08 change Terraform code to remove an asset and you do a Terraform apply notices hey
+56:14 um this cloud resource that is currently deployed is not in your code let me delete it.
+56:20 So it had like knowledge of the state of your cloud resources. SQL mesh had
+56:25 something very similar in the sense that with dbt if
+56:32 I don't know if you code something with a name you deploy it then you regret it rename it it's still going to be
+56:38 deployed like the cleanup is not that simple or use better ways to do it but it didn't come
+56:46 as part of the product as neatly as SQL mesh had it s mesh had also some great ideas like um instead of YAML they were
+56:54 a lot more declarative uh not too much ginger and so on. So it
+57:00 was definitely some interesting things in that product but it's worth noticing that uh as of October Fiverr acquired
+57:09 them and uh when it happened like my initial reaction was okay finally there will
+57:16 there will be a real competitor to DBT. Yeah. Right. Because five time would invest.
+57:21 Yeah. And then another thing happened like maybe two weeks after that they announce the DVT and fiveware merging.
+57:30 Now a merger is not finalized yet. Who knows maybe regulators can say like
+57:36 no I'm not interest I think they will I'm not an expert in these things but it is possible that
+57:43 both DVT and their second best option are going to be in the umbrella of the same company. Mhm.
+57:50 Both of them they have open source alternatives. So literally nothing is stopping you from forking it and um
+57:58 continue forward um whatever your own version of any of these tools but
+58:03 they're now under uh the same one. Mhm. Being honest with you and I'm not a
+58:09 business VC capital experts business. If you ask me it doesn't look good for
+58:16 SEC mesh. Well, I I think they're going to just merge them into one.
+58:21 Oh, that would be good actually. Like if they do this. Yeah, but for the founders, maybe that was a good exit. I don't know.
+58:27 I Man, I have no idea. Uh but what what is like interesting to mention is um
+58:36 I think they they did it wisely because if they would have um let's say merged with DVT
+58:45 and people said no I don't want my company to be merged with five trend
+58:50 migrating to SQL mesh was immediate like DVT projects were fully compatible with
+58:55 SQL mesh so people would have if there was something about DVT that people wouldn't have liked. People could have
+59:01 migrated in an instant. Yeah. But now it's just kind of interesting that now they have both. So um
+59:10 let's just say the biggest two tools in that area. Uh now there are some others but I me
+59:17 personally I don't think they apply software engineering best practices as well. So like the two that really embody
+59:24 analytics engineering the best uh now they have some sort of connection with Fiverr either being acquired or in the
+59:32 process of being merged with. Okay. So we have a few more questions. I
+59:38 wanted to ask one question from Brian. Um we are taking more time than I planned. It's we planned it for 1 hour.
+59:44 You still have time right? Oh I thought it was planning to two. It was a mistake. So it means you have
+59:52 time, right? Yes. Good. Happy to. We still have quite a lot of people. So thanks to the 100 people who are still
+59:59 sticking around. So it's amazing. Nice. Yeah. Imagine like 100 people listening to us right now. That's amazing.
+1:00:06 Anyways, Brian is asking, is it relevant to build data warehouse using data modeling now when we have all this
+1:00:13 lakehouse architecture, iceberg, drio, um, and things like that? like all these
+1:00:20 new technologies. Oh yeah, for sure. I I don't see why they are like opposites or something.
+1:00:28 Um, generally speaking, uh, some of these technologies and
+1:00:35 let's let's talk more about the concept of a lakehouse. Yeah, it's kind of nice because data warehouse, right?
+1:00:41 Yes. So data warehouse is where we keep our data. So this is a database that is
+1:00:47 optimized for analytical queries, right? So this is a data warehouse. Sorry, sometimes I talk about like
+1:00:52 assuming that everybody knows both of course we cover it in our data engineering course. So I already
+1:00:58 included the link in the description. Uh shameless plug but anyways so we have a data warehouse. What is a lakehouse?
+1:01:05 Because we don't cover lakehouse in the course. Yes. So maybe uh interesting to mention
+1:01:10 is data warehouses their databases for analytical purposes but what matters is
+1:01:16 the data there is properly model and integrated and all of the tables should be able to join with each other and blah
+1:01:22 blah. Data leaks is just like dumping data directly from a system somewhere. You
+1:01:29 can do it well and it can be organized and everything but nobody has taken the trouble to integrate that data. So there
+1:01:36 is often in a data league not such a thing as the client's I was going to say table but it's more like the client's
+1:01:42 directory or the client's folder it's more like data coming from Google analytics data coming from the CRM data
+1:01:49 coming from and it's up to the data scientist or whoever to put it together in a way that you
+1:01:56 need it now lakeous and to answer to your question sorry for the detour
+1:02:03 they have essentially managed to decouple both. So you can still dump the data as as it lands maybe per source
+1:02:11 system per whatever in a data lake but you still have an business or logical
+1:02:18 representation on top that people can query. So yes you can definitely do
+1:02:25 both. They don't have to contradict with each other. Uh, but what is really important to say and this is one that I
+1:02:32 constantly laugh is some people think that just dumping all of the data from a source system into a
+1:02:39 folder is enough. Uh, that's I would argue that's the easy part. The difficult part is to put that data
+1:02:45 together into something that resembles their business. So like to reconciliate
+1:02:51 data from all sorts of systems and turn it into something that is very obvious
+1:02:56 for people. To me that business integration work is the most difficult
+1:03:01 part. Uh and so that's why like data lake projects are a lot faster than data
+1:03:07 warehousing projects because that integration is so just want to summarize to understand
+1:03:12 what um what you said. So we have some systems let's say I don't know let's say
+1:03:19 we have meetup system where people can sign up for events. So many people who
+1:03:24 are watching us right now they came from there. So let's say I want to build analytics on top of people who come up
+1:03:31 who come to our events. So what I can do is just get a dump of all the emails to
+1:03:37 a folder in S3, right? And that would be our data lake, right? Cuz we use Metab,
+1:03:44 we use Luma, we use LinkedIn. So I would have three folders, Meetup, Luma, uh
+1:03:49 LinkedIn, right? With whatever raw data they provide, I just take it and dump it
+1:03:54 to S3 or Google Cloud Storage or whatever. And I can call it data lake,
+1:04:00 right? Because the data is there. to query it and get insights from it. There is a process like data engineers set up
+1:04:06 a process that every day um I don't know at
+12:00
+1:04:11 pulls the data from meetup all the fresh data and puts this into a specific folder in my data lakeink right so we
+1:04:19 have that so now this data is accessible I can use something like I don't know
+1:04:24 presto or whatever to query this data right so we have the data lake
+1:04:30 um it's not a very house yet cuz like it's just a bunch of JSON or pocket
+1:04:35 files, right? So in order to for this to turn into a warehouse, we need to do
+1:04:43 data modeling, right? So we need to model the table which would include like the source and then common
+1:04:50 column names, right? The email name, yeah, whatever, right? So then um then I
+1:04:56 can build at the end I can build a dashboard to understand where from which platform people are coming from right um
+1:05:04 whether they are joining and things like that. Yeah. So we have the lake we have
+1:05:10 the data warehouse. data warehouse could be something like snowflake or bigquery something that is fast something that is
+1:05:17 um or click house something that can um respond immediately very fast right so
+1:05:23 then this is what analysts are working on they don't work with uh data links they work with uh data warehouses
+1:05:31 and lake house is u best of both worlds so it's like the
+1:05:37 under nine data lake but on top of let's call it a logical representation that
+1:05:43 you can query with SQL like if it was a data warehouse and okay maybe maybe I misunderstood the question
+1:05:50 that was originally made but I could argue that even though you can build
+1:05:57 stuff directly from quering a data lake turning the data into something that is
+1:06:03 intuitive and that really speaks to people especially non techies it's a
+1:06:09 very valuable effort effort. It's an stupid amount of work to turn all of
+1:06:15 those source systems into something called customer table.
+1:06:20 But um I do think that effort is worth it
+1:06:25 and right now in in this year we're in this paradigm of modeling the data into
+1:06:31 something that is uh easy to maintain and two um intuitive for whoever is
+1:06:37 quering these tables. So if the data has been modeled properly
+1:06:44 um for let's say that you hire a new analyst a new data scientist a new whatever even a data engineer is not
+1:06:51 about technical versus nontechnical for that person it's going to be a lot more intuitive to know where to find things
+1:06:56 and how to work with um the data assets that are are in there. Mhm. So just to
+1:07:04 finish um what I was like the example I was trying to come up with and what you
+1:07:10 just said. So lakehouse would be something between data lake and warehouse. So where instead of putting
+1:07:16 these things in bigquery or click house or whatever we would just create another folder in our data lake right and then
+1:07:25 it would we already would do all the data modeling. And we would already define okay this is how our data this is
+1:07:31 what the the final representation of our data is we define the table we define the types uh but instead of saving it
+1:07:38 into bigquery we would save it into a folder in our data lake right and then uh all the analysts all the data
+1:07:44 scientists everywhere could just query this data lake folder um works table
+1:07:51 whatever it will be slower it will have to actually you know go there to S3 fetch the data but we will have the
+1:07:58 benefits of having done the data modeling part already and having all the
+1:08:04 business thinking and stuff like so then the fields are clear understandable we
+1:08:09 can do some analytics there is just slower that's what not necessarily slower then
+1:08:16 what's the difference like between the river house and lake house in this case yes so um the
+1:08:24 the thing is that the the whole lake house it's something that data bricks invented like that's that's their
+1:08:31 marketing. I see. And I think Lake House is to me like the best uh what's the difference between
+1:08:38 analytics engineer and data engineering. Often what I see in practice uh is that
+1:08:44 the data engineers are the ones building the data lake. So taking data from here, dumping it there, taking data from here,
+1:08:51 dumping it there. But a lot of times data engineers they don't want to or they don't they they just don't uh do
+1:08:59 the business integration. So like bothering like what is in this data that I just push into this location is what
+1:09:05 is the data quality anything that we need to work with. Analytics engineers are often the ones
+1:09:12 that take whatever gets dumped into the data lake and they build like the business logical representation.
+1:09:19 Now in maybe in some cases it's slower but the truth is there are some tools
+1:09:25 like fabric data bricks and to a lesser extent things like snowflake and so on
+1:09:30 that that's actually how they work. Um now data bricks and fabric they directly
+1:09:37 call it uh lakehouse but snowflake also has kind of like a
+1:09:43 data lake integrated where they save your data as files and you just build
+1:09:48 like the logical representation with u the actual snowflake UI type of thing.
+1:09:54 So mhm okay thank you. I see a few questions about the data engineering
+1:10:00 course. So if somebody has no experience in data engineering, will this course help? Yes, it will. Um, so I don't want
+1:10:08 to spend a lot of time on that. So what I will do is I will share a link to Luma
+1:10:14 to the Luma event. Next week on Monday the course starts. So I will copy the
+1:10:20 link and I will put it in the uh description
+1:10:26 also live chat. Uh so what you can do is you can just um
+1:10:32 spend some time reading the course curriculum. Uh it's the GitHub repo I sent and then if you're interested come
+1:10:39 on our launch stream where you I will present the course and you will also get
+1:10:46 uh to ask the questions. So this would be a better place to actually talk about the course. And there was another
+1:10:53 question is um sorry what are good resources that you
+1:10:59 recommend to somebody who wants to learn data engineering and it involves data links um
+1:11:06 of course I cannot give any other recommendation but our data engineering uh zoom camp uh but maybe like Juan I'll
+1:11:14 ask you so if somebody wants to ask if somebody wants to learn data engineering
+1:11:19 and data links do you know any other resources you would recommend in addition to data in addition to data
+1:11:25 engineism camp. Oh um I recently um by the way last year
+1:11:31 in 2025 uh my role was to teach uh junior data engineers
+1:11:37 and so let's say last year I went through a lot of the resources out there.
+1:11:43 I think uh data bricks has some really good courses uh for free. Some of them are paid but
+1:11:49 like the free ones are really good. Definitely great resources to learn data engineering. Uh
+1:11:57 I think it makes full sense to if you don't know anything about data engineering start at the data warehouse
+1:12:04 or lakehouse part. So either learn data bricks or snowflake or so on but it's
+1:12:10 it's a whole ecosystem of tools. Uh for example astronomer has amazing courses if you want to learn about orchestration
+1:12:16 which is part of the whole thing. Uh, Snowflake has also some good courses for free. DVT I already mentioned, amazing
+1:12:24 academy with courses. Uh, the Linux Foundation has courses in not only like
+1:12:30 Bash and Linux, which are really relevant skills, but they also have courses in Kubernetes,
+1:12:36 all of the cloud providers, uh, like Azure, GCP,
+1:12:41 uh, AWS. They do have free courses and paid certifications.
+1:12:47 pick the ones that are specifically branded towards data. So for example, the data engineer professional for GCP,
+1:12:56 they teach about all from all of the services, just the ones that have to do something with data. I think all of
+1:13:04 those are really good things. Pick one. If you don't know where to start, I'm going to stick my hand in the fire and
+1:13:09 say go for data bricks. But plenty of companies are doing amazing uh free content and of course
+1:13:17 all of the work that Alex is doing. Check the videos from previous years as well. Really cool resources.
+1:13:25 So BigQuery data bricks or snowflake. Me personally,
+1:13:31 yeah, I used to be the biggest Snowflake fan
+1:13:37 until like let's call it 2022. At first I kind of struggle with it but
+1:13:44 um oh god I'm making it so transit. Let's just say in the last two years I'm
+1:13:49 convinced I'm more team data bricks. Mhm. I've always like really really like data
+1:13:55 bricks. I just thought that maybe before the pandemic times snowflakes offering
+1:14:01 was a bit more solid. Why? Because data bricks used to be a nightmare to admin like the whole month
+1:14:08 clusters no oversight of things that you had to be very technical to
+1:14:14 they were focusing on spark primarily right but now is spark
+1:14:20 yes but now I think um it's becoming a lot easier to to work with they they're
+1:14:28 doing some amazing stuff I I also tell to people that it's a little bit of um it's kind of like comparing fridges.
+1:14:36 It's not that you're going to buy a new fridge if a new model comes that is like 10% better,
+1:14:42 but this is kind of relevant for people that either haven't learned any of them
+1:14:47 or people that are looking for the next for dead organization at this moment.
+1:14:54 I think data bricks has a bit of a more solid offer and fully biased. I I'm enjoying working
+1:15:01 with data bricks a bit more than what I'm enjoying Snowflake, but both of them are very solid and once
+1:15:07 again it's kind of a five 10% better fridge. Um, also they
+1:15:13 keep on adding new features. So maybe in
+1:15:19 three months you revisit this thing and it has aged horribly. Also, uh,
+1:15:25 Snowflake is there is this project on an open semantic layer that is supposed to
+1:15:30 be universal. Snowflake is going for that and lots of tools that Snowflake has invested in, they're there. If that
+1:15:39 thing pans out, that could be massive. I'm just a huge fan of, for example, uh
+1:15:45 how data bricks right now has like Unity, but they also have like lots of
+1:15:50 control over um Delta, which I think it's a really cool
+1:15:56 project, but who knows? Like we have iceberg, we have this um Snowflake might come up
+1:16:04 with something amazing. Snowflake is buying some amazing companies like recently I heard like select star.
+1:16:11 Look, in in two months I could have a completely different opinion because the data landscape is so fast, but if it's
+1:16:20 just this moment in time, I'm enjoying data bricks a bit more than the competitors.
+1:16:26 Did you try Click House? No, but I heard some amazing thing. More
+1:16:31 than hearing some people that I really admire like I've seen some amazing talks from them have been recently like
+1:16:38 posting on LinkedIn. Hey, I'm working for this company right now. So, I'm like, "Oh, I I should check what what
+1:16:44 these people are up to." Oh, and I love Duck DB. Mhm. DB. Uh Duck DB. Uh they also have
+1:16:52 uh Every House, right? So, there's Mother Duck. Oh, yes. Mother Duck. That's their um
+1:16:58 paid offering. Yes. Yeah. And they there they have some very housing solutions as far as I know.
+1:17:04 Yeah. Yeah. But of course I was talking data bricks snowflake but in reality most of
+1:17:12 my personal projects now are dog db and in fact
+1:17:18 for the course uh there are two setups there is the cloud setup and the local setup I
+1:17:24 changed it used to be posgress but posgress was a bit harder to set up so starting from this year the local
+1:17:30 setup is going to use TV and the reason for that is because it's very lightweight it's super easy to
+1:17:37 install. The UI looks very nice, very sleek. Um, they have full support for
+1:17:43 analytics. So all of those fun analytical modern SQL things like like
+1:17:49 what like qualify or like uh
+1:17:55 I don't know I agree by all all of these fun shortcuts and TV supports them
+1:18:03 and because it's so lightweight sometimes you can inside of your CI pipeline you can spin it up and test it
+1:18:10 and um I just I it's so convenient that But I find myself using it for more and more
+1:18:16 things. You mentioned that you hosted DBT meetup. Can you talk can you tell us
+1:18:22 more about that that Yes. Yeah. Um I've been hosting meetup since 2018. Um currently I'm just the
+1:18:31 organizer of the Dutch TV meetup. Um, but in the past I've organized and
+1:18:36 founded the analytics engineering meetup, the Dutch data visualization meetup and I've helped with some others.
+1:18:43 But yes, um I I love meetups. I think it's um when when I was younger,
+1:18:51 I really used to like organizing parties at my house, like hosting parties and getting people
+1:18:57 together, making sure they had a fun time. The the parties you organize now as you become older, right? Yeah, I realize
+1:19:05 this is like the corporate equivalent. It's it's amaz for the company hosting is
+1:19:11 amazing marketing like rarely you get the undivided attention from the
+1:19:17 important or the most knowledgeable data people in your area for two hours.
+1:19:23 for the people presenting it's an amazing career opportunity to get your hands wet in I don't know becoming a a
+1:19:31 better professional or learning stuff about data for some people it's kind of like therapy and just complaining about
+1:19:40 actually in my first job and I noticed this happens to a lot of people sometimes you you're in this position
+1:19:45 where like you feel that you're the only person in the company that understands your job or cares about it and so all of
+1:19:52 a sudden Being in a room with people that have similar issues, it's kind of relieving. Uh
+1:19:58 but therapeutical to me. What I really get out of it is I love well for example this that we're
+1:20:05 having right now. I love uh meeting interesting people and a meetup is a really good experience to a really good
+1:20:12 excuse to contact them like hey I really admire your work. I follow your uh
+1:20:17 contributions to this repo. I saw your other conference talk. Would you like to give a talk of our meetup? That gives me
+1:20:23 a nice excuse to talk to them and I think oil organizing a meeting cost me
+1:20:32 five to 10 hours and it just feels that it does like some
+1:20:38 really good stuff for the local data community. So I'm I'm a huge fan of Where do you do them? Amsterdam.
+1:20:44 Amsterdam. Yes, correct. But um I I try my best to sometimes when I'm abroad to
+1:20:49 visit them. Like I do have this um this goal of talking in 10 different DVT
+1:20:55 meetups throughout my career. I'm currently at eight. So I have had the chance to like
+1:21:02 whenever I'm traveling the world and there happens to be a DVT meetup around I try to
+1:21:07 go and um it's super fun to see how the communities are slightly different.
+1:21:13 Is it meetup.com or where do you host it? meetup.com. Okay. Please send us the link. Uh so
+1:21:20 we'll include it uh in the description for anyone who is in who lives in that area.
+1:21:25 So yeah, please check it out. Well, I think yeah, we took half an hour
+1:21:30 more. Well, minus the 5 minute uh minutes at the beginning, but yeah, it was really big pleasure for me to talk
+1:21:38 to you. Juan, thanks a lot. For sure. Question. We didn't touch many things. Um cuz I kind of went into the
+1:21:45 technical side and we missed the uh nontechnical side cuz you said it's 50/50 and then cuz we also had questions
+1:21:52 from the audience. We kind of forgot the nontechnical part. Um but we all
+1:21:58 understand it's important. So maybe at some point you will also tell us more about that. But it was really good to
+1:22:06 hear all that and I see from people from the live chat uh people really enjoyed
+1:22:11 it and many stayed till now. So this is cool. Thanks everyone for joining us for
+1:22:17 asking questions. There was um I saw a lot of um lovely discussions in the live
+1:22:23 chat. Amazing. Thank you. Nice. So maybe for everybody still watching feel free to connect with me uh
+1:22:30 on LinkedIn. Happy to chat chat with some of you, answer some questions and to get to know more of you. I hope to
+1:22:37 see many of you in the course. I'm currently recording a lot of the videos that you're going to see and I'm going
+1:22:42 to be available if you follow the data zoom camp. And finally, uh thank you
+1:22:47 Alexa. I really enjoyed it and u I'm I'm a huge fan for all of the cool stuff that you do for the community. Uh, I've
+1:22:54 seen a lot of your videos, your courses, and uh, I really really enjoy how you're
+1:23:00 bringing more accessibility to this uh, for anybody that just wants to follow it
+1:23:05 for free. Thank you, Bart. And, uh, yeah, for those who want to learn more
+1:23:11 about the course, I saw a lot of questions about it. Please come next week on Monday for the course launch. Uh
+1:23:19 and then also next week uh we will have a workshop with Juan about DBT which
+1:23:24 will become a part of the course even though it's module number four. We will pre-record it. Um so then you can also
+1:23:32 see it earlier if you want. So yeah it's going to be a lot of fun. Um so yeah
+1:23:39 looking forward to seeing more content from you. Thanks a lot. Perfect. Look forward to working with
+1:23:45 you in the future. Bye everyone.

@@ -1,0 +1,28 @@
+You'll learn about:
+
+    The fundamental differences between traditional BI engineering and modern analytics engineering.
+    How to bridge the gap between business stakeholders and technical data infrastructure.
+    The technical "glue" that connects Python and SQL for robust data pipelines.
+    The importance of automated testing (generic vs. singular tests) to prevent "silent" data failures.
+    Strategies for modeling messy, fragmented source data into a unified "business reality."
+    The current state of the "Lakehouse" paradigm and how it impacts storage and compute costs.
+    Expert advice on navigating the dbt ecosystem and its emerging competitors.
+
+
+TIMECODES:
+0:00 Juan’s psychological research and transition to data
+4:36 Riding the wave: The early days of analytics engineering
+7:56 Breaking down the gap between analysts and engineers
+11:03 The art of turning business reality into clean data
+16:25 Why data engineering is about safety, not just speed
+20:53 Reimagining data modeling in the modern era
+26:53 To split or not to split: Finding the right team roles
+30:35 Python, SQL, and the technical toolkit for success
+38:41 How to stop manually testing your data dashboards
+46:34 Bringing software engineering rigor to data workflows
+49:50 Must-read books and resources for mastering the craft
+55:42 The future of dbt and the shifting tool landscape
+1:00:29 Deciphering the lakehouse: Warehousing in the cloud
+1:11:16 Pro-tips for starting your data engineering journey
+1:14:40 The big debate: Databricks vs. Snowflake
+1:18:28 Why every data professional needs a local community
