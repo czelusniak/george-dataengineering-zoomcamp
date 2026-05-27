@@ -3,6 +3,8 @@
 __pycache__/
 *.pyc
 .python-version
+*.duckdb
+logs/
 ny_taxi_postgres_data/
 keys/
 *.json

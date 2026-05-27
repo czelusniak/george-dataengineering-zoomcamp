@@ -47,6 +47,41 @@ Modern data modeling is no longer mainly about saving storage. Its primary goal 
 
 This is especially important in environments shaped by acquisitions, multiple operational systems, or inconsistent business definitions.
 
+#### 80/20 Note: Finding the Grain
+
+Before writing a fact model, first identify its **grain**: what one row in the table represents.
+
+For `fct_trips`, the 80/20 reasoning is:
+
+- The source models describe individual taxi rides with columns like `pickup_datetime`, `dropoff_datetime`, `trip_distance`, `fare_amount`, and `payment_type`.
+- Those columns describe one ride event, not a daily summary, zone summary, vendor summary, or taxi-type summary.
+- Joining green and yellow taxi data does not change the grain. It only combines two sources that both represent trips.
+- Therefore, the intended grain is: **one row per trip**, whether the trip came from the green taxi data or the yellow taxi data.
+
+Once the grain is clear, the next modeling questions become easier: create a unique `trip_id`, check whether duplicates violate the grain, and only aggregate later in separate reporting models.
+
+#### 80/20 Note: Surrogate Keys
+
+A surrogate key is an artificial identifier created when the source data does not provide a reliable natural key.
+
+The mental model is:
+
+1. The grain is one trip.
+2. Therefore, `trip_id` must identify one trip.
+3. If the source does not provide a natural trip ID, create an artificial ID.
+4. That ID should be based on the columns that best describe the trip.
+5. Then test whether the generated ID is actually unique.
+
+For the taxi trip model, a first course-aligned definition is:
+
+```text
+vendor_id + pickup_datetime + pickup_location_id + service_type
+```
+
+The important point is consistency: the columns used to generate `trip_id` should match the columns used later to detect and fix duplicates.
+
+In dbt projects, avoid manually concatenating columns as the default habit. First check whether the project has a macro or helper for surrogate keys. A common option is `dbt_utils.generate_surrogate_key`, when the `dbt_utils` package is available, because it handles details like null values and consistent formatting more safely than ad hoc string concatenation.
+
 ### Engineering Rigor
 
 Unlike traditional BI workflows that optimize for speed alone, Analytics Engineering emphasizes robustness and error prevention through software-style quality practices.
@@ -73,75 +108,42 @@ Analytics Engineering has become essential for organizations that want more than
 
 Its value comes from combining technical rigor with business understanding. In practice, that means turning messy infrastructure and scattered definitions into models that are intuitive, reproducible, and safe enough to support real decisions.
 
+
 ---
 
-## Português (Brasil)
+## Hands-On
 
-### Sumário Executivo
+This module includes a practical setup in [`taxi_rides_ny/`](./taxi_rides_ny) for a local analytics workflow with DuckDB and dbt.
 
-A Engenharia de Analytics é a resposta estratégica à fragilidade dos ambientes de dados modernos. Historicamente, a indústria focou em construir "carros mais rápidos": mais volume, mais processamento e mais velocidade. O argumento central aqui é que a prioridade mudou. Hoje, o desafio real é construir "carros seguros": sistemas de dados confiáveis, testáveis e semanticamente consistentes.
+- **DuckDB** is a lightweight analytical database that runs locally and is good for fast SQL on files and tables.
+- **dbt-duckdb** is the dbt adapter that lets dbt run models and tests against DuckDB.
 
-A missão desta disciplina é profissionalizar a camada de transformação para que a velocidade na entrega de insights não comprometa a integridade dos dados. Em vez de depender de intuição, consultas isoladas e regras de negócio dispersas, a Engenharia de Analytics introduz fluxos de engenharia disciplinados, centrados em clareza, reprodutibilidade e confiança.
+What this hands-on does:
 
-### A Função: Dois Pilares Centrais
+1. Set up a local analytics environment with Python, DuckDB, and dbt.
+2. Build a local data lake with NYC taxi files stored as Parquet.
+3. Load the raw taxi data into a local DuckDB database.
+4. Use dbt to transform raw data into cleaner analytical models.
+5. Validate the project with `dbt debug`, `dbt run`, and `dbt test`.
 
-A Engenharia de Analytics pode ser entendida por dois pilares de execução:
+How the local data lake works:
 
-- **O quê:** traduzir a realidade do negócio em ativos de dados limpos, utilizáveis e confiáveis.
-- **Como:** aplicar rigor de engenharia de software para que esses ativos sejam repetíveis, escaláveis e sustentáveis.
+- Raw taxi data is downloaded from the course dataset source.
+- The files are converted from compressed CSV to Parquet.
+- The Parquet files are stored locally under a `data/` directory, separated by taxi type.
+- This local file layer acts as a simple data lake: cheap storage, file-based, and easy to query.
+- DuckDB reads these local Parquet files and materializes tables from them.
 
-É isso que tira o trabalho analítico de um processo artesanal e o transforma em uma disciplina confiável de produção.
+Expected flow:
 
-### Papel Organizacional
+1. Create and activate a Python virtual environment.
+2. Install `duckdb`, `dbt-core`, and `dbt-duckdb`.
+3. Configure the dbt profile in `~/.dbt/profiles.yml`.
+4. Download taxi data and create the local Parquet-based data lake.
+5. Load the raw files into `taxi_rides_ny.duckdb`.
+6. Run `dbt debug`, `dbt run`, and `dbt test` inside `taxi_rides_ny/`.
 
-O Analytics Engineer preenche a lacuna entre a gestão da infraestrutura bruta e a análise orientada ao negócio.
 
-- **Engenheiros de Dados** focam em infraestrutura, ingestão, operação de pipelines e performance de processamento.
-- **Analistas de Dados** focam em análises ad hoc, perguntas de negócio e entrega rápida de insights.
-- **Analytics Engineers** são donos da camada lógica de transformação, onde definições de negócio viram datasets estáveis e reutilizáveis.
+---
 
-Em organizações maduras, essa divisão existe porque ambos os lados se tornaram profundos e complexos demais para um único perfil executar bem.
-
-### Comparação de Papéis
-
-| Papel | Foco Principal | Responsabilidades Típicas |
-| --- | --- | --- |
-| **Analista de Dados** | Contexto de negócio e apoio à decisão | Análises ad hoc, critérios de sucesso e relatórios de resposta rápida |
-| **Engenheiro de Analytics** | Modelagem e rigor de engenharia | Camada lógica de dados, governança, testabilidade e reprodutibilidade |
-| **Engenheiro de Dados** | Infraestrutura e movimentação | Ingestão bruta, manutenção de pipelines e performance de processamento |
-
-### Modelagem de Dados
-
-Na prática moderna, modelagem de dados já não é principalmente sobre economizar armazenamento. O objetivo principal passou a ser clareza e usabilidade.
-
-- O trabalho frequentemente exige conciliar sistemas de origem fragmentados ou inconsistentes.
-- O alvo é uma representação intuitiva do negócio.
-- Um stakeholder deve conseguir consultar uma tabela como `clientes` e entender seu significado sem precisar conhecer toda a complexidade dos bastidores.
-
-Isso se torna ainda mais importante em ambientes marcados por aquisições, múltiplos sistemas operacionais ou definições de negócio inconsistentes.
-
-### Rigor de Engenharia
-
-Diferentemente de fluxos tradicionais de BI, que otimizam principalmente por velocidade, a Engenharia de Analytics enfatiza robustez e prevenção de erros por meio de práticas de qualidade inspiradas em software.
-
-- **Testes genéricos:** validam unicidade, nulidade e consistência de relacionamentos.
-- **Testes singulares:** validam regras de negócio críticas em SQL.
-- **Testes de unidade:** validam a lógica de transformação com entradas controladas e saídas esperadas.
-
-O objetivo não é apenas entregar dados rápido, mas garantir que a entrega seja confiável.
-
-### CI/CD e Automação
-
-Uma operação analítica madura trata transformações de dados como código de produção.
-
-- Código enviado ao GitHub deve disparar validações automáticas.
-- Testes devem bloquear lógica quebrada antes de chegar em produção.
-- KPIs críticos e erros custosos devem ser verificados antes do deploy.
-
-Isso reduz revisão manual, evita falhas recorrentes de lógica e aumenta a confiança da organização em seus produtos de dados.
-
-### Conclusão
-
-A Engenharia de Analytics se tornou essencial para organizações que precisam de mais do que dashboards rápidos. Ela cria sistemas de dados confiáveis ao aplicar disciplina de engenharia à lógica de negócio e aos fluxos de transformação.
-
-Seu valor vem da combinação entre rigor técnico e entendimento de negócio. Na prática, isso significa transformar infraestrutura confusa e definições dispersas em modelos intuitivos, reprodutíveis e seguros o bastante para sustentar decisões reais.
+## dbt
