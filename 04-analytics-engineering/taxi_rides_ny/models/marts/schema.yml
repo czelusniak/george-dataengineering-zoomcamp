@@ -1,0 +1,167 @@
+version: 2
+
+models:
+  - name: dim_vendors
+    description: Taxi technology vendor dimension table
+    columns:
+      - name: vendor_id
+        description: Unique vendor identifier
+        data_tests:
+          - unique
+          - not_null
+      - name: vendor_name
+        description: Company name of the vendor
+
+  - name: dim_zones
+    description: Taxi zone dimension table with location details
+    columns:
+      - name: location_id
+        description: Unique identifier for each taxi zone
+        data_tests:
+          - unique
+          - not_null
+      - name: borough
+        description: NYC borough name
+      - name: zone
+        description: Specific zone name within the borough
+      - name: service_zone
+        description: Service zone classification
+
+  - name: dim_payment_type
+    description: Payment type dimension table with payment method codes and labels
+    columns:
+      - name: payment_type
+        description: Payment method code
+        data_tests:
+          - unique
+          - not_null
+      - name: description
+        description: Human-readable payment method description
+
+  - name: fct_trips
+    description: Fact table with one row per logical taxi trip, including trip details, net payment amounts, and payment method details
+    columns:
+      - name: trip_id
+        description: Unique trip identifier
+        data_type: string
+        data_tests:
+          - unique
+          - not_null
+      - name: vendor_id
+        description: Taxi technology provider
+        data_type: integer
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_vendors')
+                field: vendor_id
+      - name: service_type
+        description: Type of taxi service (Green or Yellow)
+        data_type: string
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Green', 'Yellow']
+          - not_null
+      - name: rate_code_id
+        description: Final rate code
+        data_type: integer
+      - name: pickup_location_id
+        description: TLC Taxi Zone where trip started
+        data_type: integer
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_zones')
+                field: location_id
+      - name: pickup_borough
+        description: Borough where trip started
+        data_type: string
+      - name: pickup_zone
+        description: Zone where trip started
+        data_type: string
+      - name: dropoff_location_id
+        description: TLC Taxi Zone where trip ended
+        data_type: integer
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_zones')
+                field: location_id
+      - name: dropoff_borough
+        description: Borough where trip ended
+        data_type: string
+      - name: dropoff_zone
+        description: Zone where trip ended
+        data_type: string
+      - name: pickup_datetime
+        description: Timestamp when meter was engaged
+        data_type: timestamp
+        data_tests:
+          - not_null
+      - name: dropoff_datetime
+        description: Timestamp when meter was disengaged
+        data_type: timestamp
+        data_tests:
+          - not_null
+      - name: store_and_fwd_flag
+        description: Trip record stored in vehicle memory (Y/N)
+        data_type: string
+      - name: passenger_count
+        description: Number of passengers
+        data_type: integer
+      - name: trip_distance
+        description: Trip distance in miles
+        data_type: numeric
+      - name: trip_type
+        description: Trip type (1=Street-hail, 2=Dispatch)
+        data_type: integer
+      - name: trip_duration_minutes
+        description: Trip duration in minutes
+        data_type: bigint
+      - name: fare_amount
+        description: Net time and distance fare across all events for the logical trip
+        data_type: numeric
+      - name: extra
+        description: Net miscellaneous extras and surcharges across all events for the logical trip
+        data_type: numeric
+      - name: mta_tax
+        description: Net MTA tax across all events for the logical trip
+        data_type: numeric
+      - name: tip_amount
+        description: Net tip amount across all events for the logical trip
+        data_type: numeric
+      - name: tolls_amount
+        description: Net tolls paid across all events for the logical trip
+        data_type: numeric
+      - name: ehail_fee
+        description: Net e-hail service fee across all events for the logical trip
+        data_type: numeric
+      - name: improvement_surcharge
+        description: Net improvement surcharge across all events for the logical trip
+        data_type: numeric
+      - name: total_amount
+        description: Net total amount charged to the passenger across all events for the logical trip
+        data_type: numeric
+        data_tests:
+          - not_null
+      - name: payment_type
+        description: Representative payment method code, selected from the largest amount event for the logical trip
+        data_type: integer
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_payment_type')
+                field: payment_type
+      - name: trip_event_count
+        description: Number of raw trip events that were grouped into this logical trip. A value greater than 1 means multiple source records shared the same generated trip_id and their financial amounts were netted together.
+        data_type: bigint
+      - name: has_negative_adjustment
+        description: Boolean flag indicating whether any grouped source event had a negative total_amount, which usually represents a refund, dispute, void, or correction that reduces the logical trip's net amount.
+        data_type: boolean
+      - name: payment_type_description
+        description: Human-readable payment method description
+        data_type: string

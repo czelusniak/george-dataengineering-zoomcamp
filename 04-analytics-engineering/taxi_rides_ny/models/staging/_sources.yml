@@ -7,4 +7,110 @@ sources:
     schema: prod #OR Bigquery dataset name
     tables:
       - name: yellow_tripdata
+        description: "Yellow taxi trip data for New York City."
+        columns:
+          - name: vendorid
+            description: | 
+              A code indicating the provider associated with the trip record.
+                1: 'Creative Mobile Technologies, LLC'
+                2: 'VeriFone Inc.'
+                4: 'Unknown/Other'
+            data_type: integer
+            meta:
+              importance: high
+              ownership: data_engineering_team
       - name: green_tripdata
+        description: "Green taxi trip data for New York City."
+
+models:
+  - name: stg_green_tripdata
+    description: Staging model for green taxi trip data. Standardizes raw green taxi columns, casts data types, and filters out records without vendor_id.
+    columns:
+      - name: vendor_id
+        description: Taxi technology provider identifier.
+        data_tests:
+          - not_null
+      - name: rate_code_id
+        description: Final rate code for the trip.
+      - name: pickup_location_id
+        description: TLC Taxi Zone where the trip started.
+      - name: dropoff_location_id
+        description: TLC Taxi Zone where the trip ended.
+      - name: pickup_datetime
+        description: Date and time when the meter was engaged.
+        data_tests:
+          - not_null
+      - name: dropoff_datetime
+        description: Date and time when the meter was disengaged.
+      - name: store_and_fwd_flag
+        description: Indicates whether the trip record was stored in vehicle memory before being sent to the vendor.
+      - name: passenger_count
+        description: Number of passengers in the vehicle.
+      - name: trip_distance
+        description: Trip distance in miles reported by the taximeter.
+      - name: trip_type
+        description: Green taxi trip type code, where 1 is street-hail and 2 is dispatch.
+      - name: fare_amount
+        description: Time and distance fare calculated by the meter.
+      - name: extra
+        description: Miscellaneous extras and surcharges.
+      - name: mta_tax
+        description: MTA tax charged for the trip.
+      - name: tip_amount
+        description: Tip amount paid by credit card.
+      - name: tolls_amount
+        description: Total tolls paid during the trip.
+      - name: ehail_fee
+        description: E-hail service fee.
+      - name: improvement_surcharge
+        description: Improvement surcharge charged for the trip.
+      - name: total_amount
+        description: Total amount charged to the passenger.
+      - name: payment_type
+        description: Payment method code.
+
+  - name: stg_yellow_tripdata
+    description: Staging model for yellow taxi trip data. Standardizes raw yellow taxi columns, casts data types, adds yellow-specific defaults, and filters out records without vendor_id.
+    columns:
+      - name: vendor_id
+        description: Taxi technology provider identifier.
+        data_tests:
+          - not_null
+      - name: rate_code_id
+        description: Final rate code for the trip.
+      - name: pickup_location_id
+        description: TLC Taxi Zone where the trip started.
+      - name: dropoff_location_id
+        description: TLC Taxi Zone where the trip ended.
+      - name: pickup_datetime
+        description: Date and time when the meter was engaged.
+        data_tests:
+          - not_null
+      - name: dropoff_datetime
+        description: Date and time when the meter was disengaged.
+      - name: store_and_fwd_flag
+        description: Indicates whether the trip record was stored in vehicle memory before being sent to the vendor.
+      - name: passenger_count
+        description: Number of passengers in the vehicle.
+      - name: trip_distance
+        description: Trip distance in miles reported by the taximeter.
+      - name: trip_type
+        description: Yellow taxi trip type standardized to 1 because yellow taxi trips are treated as street-hail trips.
+      - name: fare_amount
+        description: Time and distance fare calculated by the meter.
+      - name: extra
+        description: Miscellaneous extras and surcharges.
+      - name: mta_tax
+        description: MTA tax charged for the trip.
+      - name: tip_amount
+        description: Tip amount paid by credit card.
+      - name: tolls_amount
+        description: Total tolls paid during the trip.
+      - name: ehail_fee
+        description: E-hail fee standardized to 0 because yellow taxi records do not include this source field.
+      - name: improvement_surcharge
+        description: Improvement surcharge charged for the trip.
+      - name: total_amount
+        description: Total amount charged to the passenger.
+      - name: payment_type
+        description: Payment method code.

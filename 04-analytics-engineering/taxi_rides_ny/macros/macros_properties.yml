@@ -1,0 +1,19 @@
+version: 2
+
+macros:
+  - name: get_trip_duration_minutes
+    description: Calculates trip duration in minutes from pickup and dropoff timestamps.
+    arguments:
+      - name: pickup_datetime
+        type: timestamp
+        description: Timestamp expression for when the trip started.
+      - name: dropoff_datetime
+        type: timestamp
+        description: Timestamp expression for when the trip ended.
+
+  - name: get_vendor_names
+    description: Generates a CASE expression that maps vendor IDs to vendor names.
+    arguments:
+      - name: vendor_id
+        type: integer
+        description: SQL expression or column name containing the vendor ID.

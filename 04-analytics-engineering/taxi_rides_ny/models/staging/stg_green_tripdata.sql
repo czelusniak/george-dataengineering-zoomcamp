@@ -1,29 +1,43 @@
-select
-    cast(vendorid as integer) as vendor_id,
-    {{ safe_cast('ratecodeid', 'integer') }} as rate_code_id,
-    cast(pulocationid as integer) as pickup_location_id,
-    cast(dolocationid as integer) as dropoff_location_id,
+with source as (
+    select * from {{ source('raw_data', 'green_tripdata') }}
+),
 
-    -- timestamps
-    cast(lpep_pickup_datetime as timestamp) as pickup_datetime,  -- lpep = Licensed Passenger Enhancement Program (green taxis)
-    cast(lpep_dropoff_datetime as timestamp) as dropoff_datetime,
+renamed as (
+    select
+        cast(vendorid as integer) as vendor_id,
+        {{ safe_cast('ratecodeid', 'integer') }} as rate_code_id,
+        cast(pulocationid as integer) as pickup_location_id,
+        cast(dolocationid as integer) as dropoff_location_id,
 
-    -- trip info
-    cast(store_and_fwd_flag as string) as store_and_fwd_flag,
-    cast(passenger_count as integer) as passenger_count,
-    cast(trip_distance as numeric) as trip_distance,
-    {{ safe_cast('trip_type', 'integer') }} as trip_type,
+        -- timestamps
+        cast(lpep_pickup_datetime as timestamp) as pickup_datetime,  -- lpep = Licensed Passenger Enhancement Program (green taxis)
+        cast(lpep_dropoff_datetime as timestamp) as dropoff_datetime,
 
-    -- payment info
-    cast(fare_amount as numeric) as fare_amount,
-    cast(extra as numeric) as extra,
-    cast(mta_tax as numeric) as mta_tax,
-    cast(tip_amount as numeric) as tip_amount,
-    cast(tolls_amount as numeric) as tolls_amount,
-    cast(ehail_fee as numeric) as ehail_fee,
-    cast(improvement_surcharge as numeric) as improvement_surcharge,
-    cast(total_amount as numeric) as total_amount,
-    {{ safe_cast('payment_type', 'integer') }} as payment_type
+        -- trip info
+        cast(store_and_fwd_flag as string) as store_and_fwd_flag,
+        cast(passenger_count as integer) as passenger_count,
+        cast(trip_distance as numeric) as trip_distance,
+        {{ safe_cast('trip_type', 'integer') }} as trip_type,
 
-from {{ source('raw_data', 'green_tripdata') }}
-where vendorid is not null
+        -- payment info
+        cast(fare_amount as numeric) as fare_amount,
+        cast(extra as numeric) as extra,
+        cast(mta_tax as numeric) as mta_tax,
+        cast(tip_amount as numeric) as tip_amount,
+        cast(tolls_amount as numeric) as tolls_amount,
+        cast(ehail_fee as numeric) as ehail_fee,
+        cast(improvement_surcharge as numeric) as improvement_surcharge,
+        cast(total_amount as numeric) as total_amount,
+        {{ safe_cast('payment_type', 'integer') }} as payment_type
+
+    from source
+    -- Filter out records with null vendor_id (data quality requirement)
+    where vendorid is not null
+)
+
+select * from renamed
+
+{% if target.name == 'dev' %}
+where pickup_datetime >= '{{ var("dev_start_date") }}'
+  and pickup_datetime < '{{ var("dev_end_date") }}'
+{% endif %}

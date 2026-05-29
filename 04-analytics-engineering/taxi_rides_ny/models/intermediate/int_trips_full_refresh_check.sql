@@ -1,15 +1,9 @@
 {{
-  config(
-    materialized='incremental',
-    unique_key='trip_id',
-    incremental_strategy='merge',
-    on_schema_change='append_new_columns'  )
+  config(materialized='table' )
 }}
 
 with unioned as (
     select * from {{ ref('int_trips_unioned') }}
-    where pickup_datetime >= '{{ var("batch_start_date") }}'
-    and pickup_datetime < '{{ var("batch_end_date") }}'
 ),
 
 payment_types as (

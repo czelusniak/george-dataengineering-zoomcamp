@@ -1,0 +1,116 @@
+version: 2
+
+models:
+  - name: int_trips_unioned
+    description: Union of green and yellow taxi trip data with normalized schema
+    columns:
+      - name: vendor_id
+        description: Taxi technology provider ID
+      - name: rate_code_id
+        description: Rate code at end of trip (1=Standard, 2=JFK, 3=Newark, 4=Nassau/Westchester, 5=Negotiated, 6=Group)
+      - name: pickup_location_id
+        description: TLC Taxi Zone where trip started
+      - name: dropoff_location_id
+        description: TLC Taxi Zone where trip ended
+      - name: pickup_datetime
+        description: Timestamp when meter was engaged
+      - name: dropoff_datetime
+        description: Timestamp when meter was disengaged
+      - name: store_and_fwd_flag
+        description: Trip record stored in vehicle memory (Y/N)
+      - name: passenger_count
+        description: Number of passengers in the vehicle
+      - name: trip_distance
+        description: Trip distance in miles
+      - name: trip_type
+        description: Trip type (1=Street-hail, 2=Dispatch)
+      - name: fare_amount
+        description: Time and distance fare
+      - name: extra
+        description: Miscellaneous extras and surcharges
+      - name: mta_tax
+        description: MTA tax
+      - name: tip_amount
+        description: Tip amount (credit card only)
+      - name: tolls_amount
+        description: Total tolls paid
+      - name: ehail_fee
+        description: E-hail service fee
+      - name: improvement_surcharge
+        description: Improvement surcharge
+      - name: total_amount
+        description: Total amount charged to passenger
+      - name: payment_type
+        description: Payment method code
+      - name: service_type
+        description: Type of taxi service (Green or Yellow)
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Green', 'Yellow']
+
+  - name: int_trips
+    description: Cleaned, enriched, and aggregated trip data ready for marts, with one row per logical trip
+    columns:
+      - name: trip_id
+        description: Unique trip identifier (surrogate key)
+        data_tests:
+          - unique
+          - not_null
+      - name: vendor_id
+        description: Taxi technology provider ID
+        data_tests:
+          - not_null
+      - name: service_type
+        description: Type of taxi service (Green or Yellow)
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Green', 'Yellow']
+          - not_null
+      - name: rate_code_id
+        description: Rate code at end of trip
+      - name: pickup_location_id
+        description: TLC Taxi Zone where trip started
+      - name: dropoff_location_id
+        description: TLC Taxi Zone where trip ended
+      - name: pickup_datetime
+        description: Timestamp when meter was engaged
+        data_tests:
+          - not_null
+      - name: dropoff_datetime
+        description: Timestamp when meter was disengaged
+      - name: store_and_fwd_flag
+        description: Trip record stored in vehicle memory (Y/N)
+      - name: passenger_count
+        description: Number of passengers in the vehicle
+      - name: trip_distance
+        description: Trip distance in miles
+      - name: trip_type
+        description: Trip type (1=Street-hail, 2=Dispatch)
+      - name: fare_amount
+        description: Net time and distance fare across all events for the logical trip
+      - name: extra
+        description: Net miscellaneous extras and surcharges across all events for the logical trip
+      - name: mta_tax
+        description: Net MTA tax across all events for the logical trip
+      - name: tip_amount
+        description: Net tip amount across all events for the logical trip
+      - name: tolls_amount
+        description: Net tolls paid across all events for the logical trip
+      - name: ehail_fee
+        description: Net e-hail service fee across all events for the logical trip
+      - name: improvement_surcharge
+        description: Net improvement surcharge across all events for the logical trip
+      - name: total_amount
+        description: Net total amount charged to the passenger across all events for the logical trip
+        data_tests:
+          - not_null
+      - name: payment_type
+        description: Representative payment method code, selected from the largest amount event for the logical trip
+      - name: trip_event_count
+        description: Number of raw trip events that were grouped into this logical trip. A value greater than 1 means multiple source records shared the same generated trip_id and their financial amounts were netted together.
+      - name: has_negative_adjustment
+        description: Boolean flag indicating whether any grouped source event had a negative total_amount, which usually represents a refund, dispute, void, or correction that reduces the logical trip's net amount.
+      - name: payment_type_description
+        description: Human-readable payment method description
