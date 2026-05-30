@@ -1,0 +1,79 @@
+version: 2
+
+models:
+  - name: fct_monthly_revenue_per_locations
+    description: Monthly taxi revenue and trip volume aggregated by pickup zone and service type.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - pickup_zone
+              - revenue_month
+              - service_type
+    columns:
+      - name: pickup_zone
+        description: Pickup taxi zone. Null pickup zones are grouped as Unknown Zone.
+        data_type: string
+        data_tests:
+          - not_null
+
+      - name: revenue_month
+        description: Month of the trip pickup timestamp, truncated to the first day of the month.
+        data_type: timestamp
+        data_tests:
+          - not_null
+
+      - name: service_type
+        description: Taxi service type, currently Green or Yellow.
+        data_type: string
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Green', 'Yellow']
+          - not_null
+
+      - name: revenue_monthly_fare
+        description: Total fare amount for the pickup zone, month, and service type.
+        data_type: numeric
+
+      - name: revenue_monthly_extra
+        description: Total miscellaneous extras and surcharges for the pickup zone, month, and service type.
+        data_type: numeric
+
+      - name: revenue_monthly_mta_tax
+        description: Total MTA tax for the pickup zone, month, and service type.
+        data_type: numeric
+
+      - name: revenue_monthly_tip_amount
+        description: Total tip amount for the pickup zone, month, and service type.
+        data_type: numeric
+
+      - name: revenue_monthly_tolls_amount
+        description: Total tolls amount for the pickup zone, month, and service type.
+        data_type: numeric
+
+      - name: revenue_monthly_ehail_fee
+        description: Total e-hail fee for the pickup zone, month, and service type.
+        data_type: numeric
+
+      - name: revenue_monthly_improvement_surcharge
+        description: Total improvement surcharge for the pickup zone, month, and service type.
+        data_type: numeric
+
+      - name: revenue_monthly_total_amount
+        description: Total trip amount for the pickup zone, month, and service type.
+        data_type: numeric
+
+      - name: total_monthly_trips
+        description: Count of logical trips for the pickup zone, month, and service type.
+        data_type: bigint
+        data_tests:
+          - not_null
+
+      - name: avg_monthly_passenger_count
+        description: Average passenger count for the pickup zone, month, and service type.
+        data_type: numeric
+
+      - name: avg_monthly_trip_distance
+        description: Average trip distance for the pickup zone, month, and service type.
+        data_type: numeric

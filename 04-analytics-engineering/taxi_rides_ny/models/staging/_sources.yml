@@ -21,6 +21,8 @@ sources:
               ownership: data_engineering_team
       - name: green_tripdata
         description: "Green taxi trip data for New York City."
+      - name: fhv_tripdata
+        description: "For-hire vehicle trip data for New York City."
 
 models:
   - name: stg_green_tripdata
@@ -114,3 +116,21 @@ models:
         description: Total amount charged to the passenger.
       - name: payment_type
         description: Payment method code.
+
+  - name: stg_fhv_tripdata
+    description: Staging model for FHV (For-Hire Vehicle) trips. FHV services include pre-arranged transportation providers such as black cars, limousines, and car services licensed by the NYC TLC.
+    columns:
+      - name: dispatching_base_num
+        description: TLC-issued identifier of the base that dispatched the trip request to a driver or vehicle.
+      - name: pickup_location_id
+        description: TLC Taxi Zone identifier representing the location where the passenger was picked up.
+      - name: dropoff_location_id
+        description: TLC Taxi Zone identifier representing the location where the passenger was dropped off.
+      - name: pickup_datetime
+        description: Date and timestamp when the trip began and the passenger was picked up.
+      - name: dropoff_datetime
+        description: Date and timestamp when the trip ended and the passenger was dropped off.
+      - name: sr_flag
+        description: Shared Ride flag provided by the TLC. A value of 1 indicates the trip was reported as a shared ride. A value of 0 or null indicates the trip was not reported as shared.
+      - name: affiliated_base_number
+        description: TLC-issued identifier of the affiliated base associated with the vehicle or trip. This may differ from the dispatching base number.

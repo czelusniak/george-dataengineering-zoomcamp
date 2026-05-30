@@ -107,3 +107,12 @@ from (
   )
   group by 1
   order by 1;
+
+
+
+--- homework
+select * from {{ ref('fct_trips')}}
+limit 100;
+
+
+select * from {{ ref('fct_monthly_revenue_per_locations')}};
