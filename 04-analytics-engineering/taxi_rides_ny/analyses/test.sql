@@ -111,8 +111,11 @@ from (
 
 
 --- homework
-select * from {{ ref('fct_trips')}}
-limit 100;
+select * 
+from prod.fct_trips;
 
 
-select * from {{ ref('fct_monthly_revenue_per_locations')}};
+
+select * from "taxi_rides_ny"."prod"."fct_monthly_revenue_per_locations"
+limit 100
+;
