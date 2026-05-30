@@ -2,10 +2,6 @@
 
 ---
 
-## English
-
-### Executive Summary
-
 Analytics Engineering is the strategic response to the fragility of modern data environments. Historically, the industry focused on building "faster cars": more volume, more processing power, and faster delivery. The core argument here is that the priority has changed. Today, the real challenge is building "safer cars": reliable, testable, and semantically consistent data systems.
 
 The mission of this discipline is to professionalize the transformation layer so that speed in delivering insights does not compromise data integrity. Instead of relying on intuition, one-off queries, and scattered business logic, Analytics Engineering introduces disciplined engineering workflows centered on clarity, reproducibility, and trust.
@@ -46,41 +42,6 @@ Modern data modeling is no longer mainly about saving storage. Its primary goal 
 - A stakeholder should be able to query a table like `customers` and understand what it means without knowing the complexity behind it.
 
 This is especially important in environments shaped by acquisitions, multiple operational systems, or inconsistent business definitions.
-
-#### 80/20 Note: Finding the Grain
-
-Before writing a fact model, first identify its **grain**: what one row in the table represents.
-
-For `fct_trips`, the 80/20 reasoning is:
-
-- The source models describe individual taxi rides with columns like `pickup_datetime`, `dropoff_datetime`, `trip_distance`, `fare_amount`, and `payment_type`.
-- Those columns describe one ride event, not a daily summary, zone summary, vendor summary, or taxi-type summary.
-- Joining green and yellow taxi data does not change the grain. It only combines two sources that both represent trips.
-- Therefore, the intended grain is: **one row per trip**, whether the trip came from the green taxi data or the yellow taxi data.
-
-Once the grain is clear, the next modeling questions become easier: create a unique `trip_id`, check whether duplicates violate the grain, and only aggregate later in separate reporting models.
-
-#### 80/20 Note: Surrogate Keys
-
-A surrogate key is an artificial identifier created when the source data does not provide a reliable natural key.
-
-The mental model is:
-
-1. The grain is one trip.
-2. Therefore, `trip_id` must identify one trip.
-3. If the source does not provide a natural trip ID, create an artificial ID.
-4. That ID should be based on the columns that best describe the trip.
-5. Then test whether the generated ID is actually unique.
-
-For the taxi trip model, a first course-aligned definition is:
-
-```text
-vendor_id + pickup_datetime + pickup_location_id + service_type
-```
-
-The important point is consistency: the columns used to generate `trip_id` should match the columns used later to detect and fix duplicates.
-
-In dbt projects, avoid manually concatenating columns as the default habit. First check whether the project has a macro or helper for surrogate keys. A common option is `dbt_utils.generate_surrogate_key`, when the `dbt_utils` package is available, because it handles details like null values and consistent formatting more safely than ad hoc string concatenation.
 
 ### Engineering Rigor
 
@@ -143,28 +104,37 @@ Expected flow:
 5. Load the raw files into `taxi_rides_ny.duckdb`.
 6. Run `dbt debug`, `dbt run`, and `dbt test` inside `taxi_rides_ny/`.
 
+### Finding the Grain
 
----
+Before writing a fact model, first identify its **grain**: what one row in the table represents.
 
-## dbt
+For `fct_trips`, the reasoning is:
 
-### Sequencia Para Integrar A Base FHV Ao Projeto `taxi_rides_ny`
+- The source models describe individual taxi rides with columns like `pickup_datetime`, `dropoff_datetime`, `trip_distance`, `fare_amount`, and `payment_type`.
+- Those columns describe one ride event, not a daily summary, zone summary, vendor summary, or taxi-type summary.
+- Joining green and yellow taxi data does not change the grain. It only combines two sources that both represent trips.
+- Therefore, the intended grain is: **one row per trip**, whether the trip came from the green taxi data or the yellow taxi data.
 
-Depois de baixar e carregar os dados `fhv` no mesmo arquivo `taxi_rides_ny.duckdb`, a sequencia para usar essa base nova junto ao projeto e:
+Once the grain is clear, the next modeling questions become easier: create a unique `trip_id`, check whether duplicates violate the grain, and only aggregate later in separate reporting models.
 
-1. Confirmar que a tabela bruta existe no DuckDB.
-   Exemplo:
-   ```sql
-   SELECT COUNT(*) FROM prod.fhv_tripdata;
-   ```
-2. Adicionar `fhv_tripdata` no arquivo de `sources` do dbt, junto das tabelas `yellow_tripdata` e `green_tripdata`.
-3. Criar um model de staging, por exemplo `stg_fhv_tripdata.sql`, usando `{{ source('raw_data', 'fhv_tripdata') }}`.
-4. Ajustar o staging considerando que o schema de `fhv` e diferente do schema de `yellow` e `green`, entao nao basta copiar e colar sem revisar as colunas.
-5. Para o homework do modulo 4, manter `fhv` no staging e validar `stg_fhv_tripdata`. So criar modelos finais de FHV depois, caso a analise realmente peca isso.
-6. Adicionar testes e documentacao no YAML do model, pelo menos para colunas e chaves importantes.
-7. Rodar o dbt primeiro so na parte nova.
-   Exemplo:
-   ```bash
-   dbt build --select stg_fhv_tripdata
-   ```
-8. Validar o resultado no DuckDB UI com consultas simples, como `COUNT(*)` e `LIMIT 10`, para conferir se o modelo novo apareceu e esta com dados.
+### Surrogate Keys
+
+A surrogate key is an artificial identifier created when the source data does not provide a reliable natural key.
+
+The mental model is:
+
+1. The grain is one trip.
+2. Therefore, `trip_id` must identify one trip.
+3. If the source does not provide a natural trip ID, create an artificial ID.
+4. That ID should be based on the columns that best describe the trip.
+5. Then test whether the generated ID is actually unique.
+
+For the taxi trip model, a first course-aligned definition is:
+
+```text
+vendor_id + pickup_datetime + pickup_location_id + service_type
+```
+
+The important point is consistency: the columns used to generate `trip_id` should match the columns used later to detect and fix duplicates.
+
+In dbt projects, avoid manually concatenating columns as the default habit. First check whether the project has a macro or helper for surrogate keys. A common option is `dbt_utils.generate_surrogate_key`, when the `dbt_utils` package is available, because it handles details like null values and consistent formatting more safely than ad hoc string concatenation.
