@@ -147,3 +147,24 @@ Expected flow:
 ---
 
 ## dbt
+
+### Sequencia Para Integrar A Base FHV Ao Projeto `taxi_rides_ny`
+
+Depois de baixar e carregar os dados `fhv` no mesmo arquivo `taxi_rides_ny.duckdb`, a sequencia para usar essa base nova junto ao projeto e:
+
+1. Confirmar que a tabela bruta existe no DuckDB.
+   Exemplo:
+   ```sql
+   SELECT COUNT(*) FROM prod.fhv_tripdata;
+   ```
+2. Adicionar `fhv_tripdata` no arquivo de `sources` do dbt, junto das tabelas `yellow_tripdata` e `green_tripdata`.
+3. Criar um model de staging, por exemplo `stg_fhv_tripdata.sql`, usando `{{ source('raw_data', 'fhv_tripdata') }}`.
+4. Ajustar o staging considerando que o schema de `fhv` e diferente do schema de `yellow` e `green`, entao nao basta copiar e colar sem revisar as colunas.
+5. Para o homework do modulo 4, manter `fhv` no staging e validar `stg_fhv_tripdata`. So criar modelos finais de FHV depois, caso a analise realmente peca isso.
+6. Adicionar testes e documentacao no YAML do model, pelo menos para colunas e chaves importantes.
+7. Rodar o dbt primeiro so na parte nova.
+   Exemplo:
+   ```bash
+   dbt build --select stg_fhv_tripdata
+   ```
+8. Validar o resultado no DuckDB UI com consultas simples, como `COUNT(*)` e `LIMIT 10`, para conferir se o modelo novo apareceu e esta com dados.

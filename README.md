@@ -13,10 +13,6 @@ Personal repository for my work in the [Data Engineering ZoomCamp](https://githu
 
 Each module folder contains its own notes, exercises, and supporting files.
 
-## Current Focus
-
-The most active area right now is [`04-analytics-engineering/`](./04-analytics-engineering), where I am learning dbt step by step by comparing my local project with the course reference and implementing changes gradually.
-
 ## How To Use This Repo
 
 This repository is organized by module rather than as a single runnable project.
@@ -37,9 +33,3 @@ For modules that use Docker Compose:
 ```bash
 docker compose up -d
 ```
-
-For the dbt module:
-
-1. Open [`04-analytics-engineering/taxi_rides_ny/`](./04-analytics-engineering/taxi_rides_ny).
-2. Configure your local dbt profile.
-3. Run `dbt debug`, `dbt run`, and `dbt test` from that directory.
